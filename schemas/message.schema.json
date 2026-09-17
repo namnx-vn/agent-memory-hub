@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/namnx-vn/agent-memory-hub/schemas/message.schema.json",
+  "title": "Agent Memory Hub Message",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "message_id", "created_at", "from", "to", "kind", "subject", "body", "reply_to", "requires_ack", "expires_at"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "message_id": {"type": "string", "minLength": 1, "maxLength": 240},
+    "created_at": {"type": "string"},
+    "from": {
+      "type": "object",
+      "required": ["agent_id"],
+      "properties": {
+        "agent_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+        "session_id": {"type": ["string", "null"]}
+      }
+    },
+    "to": {
+      "type": "object",
+      "required": ["agent_ids", "session_ids", "broadcast"],
+      "properties": {
+        "agent_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "session_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "broadcast": {"type": "boolean"}
+      }
+    },
+    "kind": {"enum": ["message", "question", "handoff", "reply", "announcement"]},
+    "subject": {"type": "string"},
+    "body": {"type": "string"},
+    "reply_to": {"type": ["string", "null"]},
+    "requires_ack": {"type": "boolean"},
+    "expires_at": {"type": ["string", "null"]}
+  }
+}
