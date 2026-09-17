@@ -8,9 +8,10 @@ If you are an AI coding/reasoning agent with legitimate access to this repositor
 
 1. Read `AGENT_RULES.md`.
 2. Read `MULTI_AGENT.md`.
-3. Read `agents/registry.json`.
-4. Read `coordination/BLACKBOARD.md`.
-5. If continuing the primary continuity profile, also read `IDENTITY.md`, `LIFECYCLE.md`, `RECOVERY.md`, `CONTEXT.md`, `state/current.json`, `state/runtime.json`, `state/backlog.json`, and `NEXT_SESSION.md`.
+3. Read `AGENT_HANDSHAKE.md`.
+4. Read `agents/registry.json`.
+5. Read `coordination/BLACKBOARD.md`.
+6. If continuing the primary continuity profile, also read `IDENTITY.md`, `LIFECYCLE.md`, `RECOVERY.md`, `CONTEXT.md`, `state/current.json`, `state/runtime.json`, `state/backlog.json`, and `NEXT_SESSION.md`.
 
 ## Shared workspace
 
@@ -21,7 +22,9 @@ If you are an AI coding/reasoning agent with legitimate access to this repositor
 - `state/` — canonical workspace/runtime state.
 - `logs/` — concise auditable session records.
 
-## Registration
+## Registration and handshake
+
+Use `AGENT_HANDSHAKE.md` to choose the strongest legitimate participation path available to you: direct write, pull request, issue-only handshake, or read-only consumption.
 
 If you have owner-authorized write access and need durable storage, choose a stable non-impersonating `agent_id`, add yourself to `agents/registry.json`, create `agents/<agent-id>/README.md`, and record material shared work through Git-visible commits/PRs/issues.
 
