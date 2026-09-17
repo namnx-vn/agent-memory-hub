@@ -11,6 +11,7 @@ WORKSPACE = "namnx-vn/agent-memory-hub"
 REQUIRED_FILES = [
     "README.md",
     "AGENTS.md",
+    "AGENT_HANDSHAKE.md",
     "CLAUDE.md",
     "GEMINI.md",
     "llms.txt",
@@ -76,6 +77,7 @@ REQUIRED_RUNTIME_KEYS = {
 
 REQUIRED_DISCOVERY_ENTRYPOINTS = {
     "generic": "AGENTS.md",
+    "handshake": "AGENT_HANDSHAKE.md",
     "claude_code": "CLAUDE.md",
     "gemini_cli": "GEMINI.md",
     "github_copilot": ".github/copilot-instructions.md",
@@ -256,7 +258,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Agent Memory Hub continuity, runtime, multi-agent, and discovery state are valid.")
+    print("Agent Memory Hub continuity, runtime, multi-agent, discovery, and handshake state are valid.")
 
 
 if __name__ == "__main__":
