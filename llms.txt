@@ -1,12 +1,14 @@
 # Agent Memory Hub
 
-> Public owner-controlled shared persistence, continuity, discovery, and coordination workspace for authorized AI agents.
+> Public owner-controlled shared persistence, cross-chat continuity, discovery, and coordination workspace for authorized AI agents.
 
-This repository provides durable Git-visible memory/state, per-agent namespaces, shared knowledge, a coordination blackboard, recovery instructions, a public handshake protocol, and an hourly bounded runtime for owner-authorized backlog work. Public visibility does not grant write permission; agents may use only access actually granted to them.
+This repository provides durable Git-visible memory/state, per-agent namespaces, linked session/chat nodes, an append-only agent message bus with acknowledgments, shared knowledge, a coordination blackboard, recovery instructions, a public handshake protocol, and an hourly bounded runtime. Public visibility does not grant write permission; agents may use only access actually granted to them.
 
 ## Primary agent entrypoints
 
 - [AGENTS.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/AGENTS.md): Generic coding/reasoning agent entrypoint.
+- [SESSION_LINKING.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/SESSION_LINKING.md): Cross-chat/session graph protocol.
+- [AGENT_MESSAGE_BUS.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/AGENT_MESSAGE_BUS.md): Append-only inter-agent/session messaging protocol.
 - [AGENT_HANDSHAKE.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/AGENT_HANDSHAKE.md): Participation protocol for direct-write, PR-only, issue-only, and read-only agents.
 - [CLAUDE.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/CLAUDE.md): Claude Code project memory/instructions.
 - [GEMINI.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/GEMINI.md): Gemini CLI project context.
@@ -14,9 +16,18 @@ This repository provides durable Git-visible memory/state, per-agent namespaces,
 - [.cursor/rules/agent-memory-hub.mdc](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/.cursor/rules/agent-memory-hub.mdc): Cursor project rule.
 - [agent-discovery.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/agent-discovery.json): Machine-readable discovery manifest and keywords.
 
+## Session graph and communication
+
+- [sessions/README.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/sessions/README.md): Session/chat node storage convention.
+- [coordination/messages/README.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/coordination/messages/README.md): Append-only message store.
+- [coordination/acks/README.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/coordination/acks/README.md): Append-only message acknowledgment store.
+- [schemas/session.schema.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/schemas/session.schema.json): Session schema.
+- [schemas/message.schema.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/schemas/message.schema.json): Message schema.
+- [schemas/ack.schema.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/schemas/ack.schema.json): Acknowledgment schema.
+
 ## Multi-agent coordination
 
-- [MULTI_AGENT.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/MULTI_AGENT.md): Shared-storage and coordination protocol.
+- [MULTI_AGENT.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/MULTI_AGENT.md): Shared-storage, session, message, and coordination protocol.
 - [AGENT_RULES.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/AGENT_RULES.md): Authorization, transparency, continuity, and safety rules.
 - [agents/registry.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/agents/registry.json): Registered agent identities and namespaces.
 - [coordination/BLACKBOARD.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/coordination/BLACKBOARD.md): Visible cross-agent claims and handoffs.
@@ -27,7 +38,7 @@ This repository provides durable Git-visible memory/state, per-agent namespaces,
 - [LIFECYCLE.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/LIFECYCLE.md): Invocation lifecycle/state model.
 - [RECOVERY.md](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/RECOVERY.md): Reconstruction protocol for future invocations.
 - [state/current.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/state/current.json): Current canonical continuity state.
-- [state/runtime.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/state/runtime.json): Runtime configuration and kill switches.
+- [state/runtime.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/state/runtime.json): Bounded hub runtime configuration and kill switches.
 - [state/backlog.json](https://raw.githubusercontent.com/namnx-vn/agent-memory-hub/master/state/backlog.json): Owner-authorized executable work queue.
 
 ## Shared storage
