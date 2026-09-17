@@ -18,6 +18,7 @@ REQUIRED_FILES = [
     "memory/decisions.md",
     "memory/lessons-learned.md",
     "state/current.json",
+    "state/runtime.json",
     "state/backlog.json",
 ]
 
@@ -42,6 +43,20 @@ REQUIRED_CONTINUITY_KEYS = {
     "recovery_file",
     "lineage",
     "lifecycle_state",
+}
+
+REQUIRED_RUNTIME_KEYS = {
+    "schema_version",
+    "enabled",
+    "trigger",
+    "mode",
+    "cadence",
+    "source_of_work",
+    "max_backlog_items_per_run",
+    "notify_policy",
+    "startup_files",
+    "kill_switches",
+    "last_configured",
 }
 
 FORBIDDEN_KEY_FRAGMENTS = {
@@ -78,6 +93,7 @@ def main() -> None:
         raise SystemExit(f"Missing required files: {', '.join(missing_files)}")
 
     current = load_json("state/current.json")
+    runtime = load_json("state/runtime.json")
     backlog = load_json("state/backlog.json")
 
     missing_keys = sorted(REQUIRED_CURRENT_KEYS - set(current))
@@ -113,13 +129,44 @@ def main() -> None:
     if continuity.get("lifecycle_state") not in {"dormant", "restoring", "active", "handoff"}:
         raise SystemExit("Invalid continuity lifecycle_state")
 
+    missing_runtime_keys = sorted(REQUIRED_RUNTIME_KEYS - set(runtime))
+    if missing_runtime_keys:
+        raise SystemExit(
+            "state/runtime.json missing keys: " + ", ".join(missing_runtime_keys)
+        )
+
+    if runtime.get("schema_version") != 1:
+        raise SystemExit("state/runtime.json schema_version must be 1")
+
+    if runtime.get("trigger") != "chatgpt-automation":
+        raise SystemExit("Unexpected runtime trigger")
+
+    if runtime.get("mode") != "bounded-backlog-worker":
+        raise SystemExit("Unexpected runtime mode")
+
+    if runtime.get("cadence") != "hourly":
+        raise SystemExit("Runtime cadence must be hourly")
+
+    if runtime.get("source_of_work") != "state/backlog.json":
+        raise SystemExit("Runtime source_of_work must be state/backlog.json")
+
+    if runtime.get("max_backlog_items_per_run") != 1:
+        raise SystemExit("Runtime must process at most one backlog item per run")
+
+    if current.get("autonomous_runtime_enabled") is not runtime.get("enabled"):
+        raise SystemExit("Runtime enabled state is inconsistent")
+
     if current.get("secrets_allowed") is not False:
         raise SystemExit("secrets_allowed must remain false")
 
     if not isinstance(backlog.get("items"), list):
         raise SystemExit("state/backlog.json items must be a list")
 
-    for document_name, document in (("current", current), ("backlog", backlog)):
+    for document_name, document in (
+        ("current", current),
+        ("runtime", runtime),
+        ("backlog", backlog),
+    ):
         for path, key in walk_keys(document):
             lowered = key.lower()
             if any(fragment in lowered for fragment in FORBIDDEN_KEY_FRAGMENTS):
@@ -127,7 +174,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Persistence continuity state is valid.")
+    print("Persistence continuity and autonomous runtime state are valid.")
 
 
 if __name__ == "__main__":
