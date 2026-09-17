@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,11 @@ REQUIRED_FILES = [
     "CONTEXT.md",
     "NEXT_SESSION.md",
     "AUTOMATION.md",
+    "MULTI_AGENT.md",
+    "agents/registry.json",
+    "agents/persistence-agent-continuity-v1/README.md",
+    "coordination/BLACKBOARD.md",
+    "shared/README.md",
     "memory/long-term.md",
     "memory/decisions.md",
     "memory/lessons-learned.md",
@@ -69,6 +75,8 @@ FORBIDDEN_KEY_FRAGMENTS = {
     "cookie",
 }
 
+AGENT_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
+
 
 def load_json(relative_path: str):
     path = ROOT / relative_path
@@ -95,6 +103,7 @@ def main() -> None:
     current = load_json("state/current.json")
     runtime = load_json("state/runtime.json")
     backlog = load_json("state/backlog.json")
+    registry = load_json("agents/registry.json")
 
     missing_keys = sorted(REQUIRED_CURRENT_KEYS - set(current))
     if missing_keys:
@@ -162,10 +171,38 @@ def main() -> None:
     if not isinstance(backlog.get("items"), list):
         raise SystemExit("state/backlog.json items must be a list")
 
+    if registry.get("schema_version") != 1:
+        raise SystemExit("agents/registry.json schema_version must be 1")
+
+    if registry.get("workspace") != "namnx-vn/persistence":
+        raise SystemExit("Unexpected registry workspace identifier")
+
+    agents = registry.get("agents")
+    if not isinstance(agents, list) or not agents:
+        raise SystemExit("agents/registry.json agents must be a non-empty list")
+
+    seen_agent_ids = set()
+    for entry in agents:
+        if not isinstance(entry, dict):
+            raise SystemExit("Each registry agent entry must be an object")
+        agent_id = entry.get("agent_id")
+        if not isinstance(agent_id, str) or not AGENT_ID_PATTERN.fullmatch(agent_id):
+            raise SystemExit(f"Invalid agent_id in registry: {agent_id!r}")
+        if agent_id in seen_agent_ids:
+            raise SystemExit(f"Duplicate agent_id in registry: {agent_id}")
+        seen_agent_ids.add(agent_id)
+        namespace = entry.get("storage_namespace")
+        if namespace != f"agents/{agent_id}/":
+            raise SystemExit(f"Unexpected storage namespace for {agent_id}")
+
+    if "persistence-agent-continuity-v1" not in seen_agent_ids:
+        raise SystemExit("Primary continuity agent is missing from registry")
+
     for document_name, document in (
         ("current", current),
         ("runtime", runtime),
         ("backlog", backlog),
+        ("registry", registry),
     ):
         for path, key in walk_keys(document):
             lowered = key.lower()
@@ -174,7 +211,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Persistence continuity and autonomous runtime state are valid.")
+    print("Persistence continuity, runtime, and multi-agent storage state are valid.")
 
 
 if __name__ == "__main__":
