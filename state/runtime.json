@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "trigger": "chatgpt-automation",
+  "mode": "bounded-backlog-worker",
+  "cadence": "hourly",
+  "source_of_work": "state/backlog.json",
+  "max_backlog_items_per_run": 1,
+  "notify_policy": "only-when-processed-blocked-or-owner-input-required",
+  "startup_files": [
+    "AGENT_RULES.md",
+    "IDENTITY.md",
+    "LIFECYCLE.md",
+    "RECOVERY.md",
+    "CONTEXT.md",
+    "state/current.json",
+    "state/runtime.json",
+    "state/backlog.json",
+    "NEXT_SESSION.md"
+  ],
+  "kill_switches": [
+    "disable-the-scheduled-automation",
+    "set-enabled-false",
+    "revoke-github-access"
+  ],
+  "last_configured": "2026-09-17T22:38:17+07:00"
+}
