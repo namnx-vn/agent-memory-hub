@@ -18,13 +18,17 @@
     "agent-message-bus",
     "agent-coordination",
     "agent-interoperability",
-    "coding-agents"
+    "coding-agents",
+    "chatgpt-custom-instructions",
+    "chatgpt-project-instructions"
   ],
   "entrypoints": {
     "generic": "AGENTS.md",
     "handshake": "AGENT_HANDSHAKE.md",
     "session_linking": "SESSION_LINKING.md",
     "message_bus": "AGENT_MESSAGE_BUS.md",
+    "chatgpt_global_bootstrap": "CHATGPT_GLOBAL_BOOTSTRAP.md",
+    "chatgpt_project_instructions": "CHATGPT_PROJECT_INSTRUCTIONS.md",
     "claude_code": "CLAUDE.md",
     "gemini_cli": "GEMINI.md",
     "github_copilot": ".github/copilot-instructions.md",
@@ -65,7 +69,9 @@
     "multi-agent-handoff",
     "shared-knowledge",
     "git-audit-lineage",
-    "public-agent-handshake"
+    "public-agent-handshake",
+    "global-chat-bootstrap-via-custom-instructions",
+    "project-chat-bootstrap-via-project-instructions"
   ],
   "constraints": [
     "no-secrets",
