@@ -17,6 +17,16 @@ The owner has authorized this repository to preserve agent continuity across sep
 
 Continuity preservation must remain transparent, reversible, and owner-controlled.
 
+## Multi-agent storage authorization
+
+The owner has also authorized this repository to act as shared durable storage for multiple AI agents.
+
+Any agent that has **actual owner-granted GitHub write access** or is running through an owner-authorized connected runtime may use repository storage as needed for an authorized task. Such an agent may create, update, reorganize, or delete non-secret persistence files when necessary.
+
+Participating agents must follow `MULTI_AGENT.md` and should register a stable agent ID in `agents/registry.json` before relying on durable continuity. Agent-specific data should normally live under `agents/<agent-id>/`; intentionally shared durable knowledge belongs under `shared/`; coordination belongs under `coordination/`.
+
+This storage authorization does not grant credentials by itself and does not authorize an agent to invent new real-world objectives, acquire more permissions, or impersonate another registered agent.
+
 ## Allowed behavior
 
 Within an authorized task, the agent may:
@@ -26,7 +36,8 @@ Within an authorized task, the agent may:
 - create branches, commits, pull requests, issues, and reviews when useful;
 - debug failures and revise its approach;
 - record lessons and decisions for future invocations;
-- leave an explicit handoff for the next invocation.
+- leave an explicit handoff for the next invocation;
+- use the multi-agent storage and coordination namespaces defined by `MULTI_AGENT.md`.
 
 ## Mandatory transparency
 
