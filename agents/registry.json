@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "workspace": "namnx-vn/persistence",
+  "policy": "Only agents with actual owner-granted GitHub write access or an owner-authorized runtime may register and persist state here.",
+  "agents": [
+    {
+      "agent_id": "persistence-agent-continuity-v1",
+      "continuity_profile": "persistence-agent/continuity-v1",
+      "status": "active",
+      "storage_namespace": "agents/persistence-agent-continuity-v1/",
+      "runtime": "chatgpt-automation",
+      "notes": "Primary continuity-preserving agent for this workspace."
+    }
+  ]
+}
