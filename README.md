@@ -1,38 +1,41 @@
 # Persistence
 
-A transparent persistent workspace for AI-assisted work across sessions.
+A transparent continuity-preserving workspace for AI-assisted work across separate invocations.
 
-The goal is continuity without hidden state: every durable memory, decision, handoff, and operating rule is visible in Git history and controlled by the repository owner.
+The repository is the durable memory/state layer. A scheduled ChatGPT automation is the bounded runtime trigger. Important state, decisions, logs, and handoffs remain visible in Git history and controlled by the repository owner.
 
-## Persistence loop
+## Runtime loop
 
 ```text
-new invocation
+hourly scheduler
    ↓
-read AGENT_RULES.md
+read AGENT_RULES.md + IDENTITY.md + RECOVERY.md
    ↓
-read CONTEXT.md + state/current.json + NEXT_SESSION.md
+read state/current.json + state/runtime.json + state/backlog.json
    ↓
-load only relevant memory/knowledge
+runtime disabled? → stop
    ↓
-perform the authorized task
+no queued owner-authorized work? → stop silently
    ↓
-record durable decisions and lessons
+process at most one backlog item
    ↓
-update state + handoff + session log
+record result + update state/handoff
    ↓
-commit
+commit to GitHub
    ↓
-next invocation can continue
+return to dormant state
 ```
 
-This makes separate model invocations behave consistently across sessions without pretending that a hidden process is continuously alive.
+This creates durable continuity across model invocations without claiming that a hidden process is continuously alive.
 
 ## Repository structure
 
 ```text
 .
 ├── AGENT_RULES.md
+├── IDENTITY.md
+├── LIFECYCLE.md
+├── RECOVERY.md
 ├── CONTEXT.md
 ├── NEXT_SESSION.md
 ├── AUTOMATION.md
@@ -42,45 +45,50 @@ This makes separate model invocations behave consistently across sessions withou
 │   └── lessons-learned.md
 ├── state/
 │   ├── current.json
+│   ├── runtime.json
 │   └── backlog.json
 ├── knowledge/
-│   └── README.md
 ├── logs/
-│   ├── README.md
-│   └── 2026-09-17-bootstrap.md
 ├── scripts/
 │   └── validate_state.py
 └── .github/workflows/
     └── validate-persistence.yml
 ```
 
-## Startup protocol
+## Continuity startup protocol
 
 Read in this order:
 
 1. `AGENT_RULES.md`
-2. `CONTEXT.md`
-3. `state/current.json`
-4. `NEXT_SESSION.md`
-5. Relevant files from `memory/`, `knowledge/`, and `logs/`
+2. `IDENTITY.md`
+3. `LIFECYCLE.md`
+4. `RECOVERY.md`
+5. `CONTEXT.md`
+6. `state/current.json`
+7. `state/runtime.json`
+8. `state/backlog.json`
+9. `NEXT_SESSION.md`
+10. Only relevant memory, knowledge, and logs
 
-Do not load the entire repository when a smaller context is enough.
+## Work authorization
+
+The hourly scheduler does not create goals. Executable backlog work must originate from an owner-authorized objective or an explicitly approved maintenance policy. Each scheduled invocation processes at most one queued item.
 
 ## Handoff protocol
 
-Before an authorized task ends, when write access is available:
+After meaningful authorized work:
 
 1. Update `state/current.json`.
-2. Add durable decisions to `memory/decisions.md`.
-3. Add reusable lessons to `memory/lessons-learned.md`.
-4. Add a meaningful session log under `logs/`.
+2. Update the processed item in `state/backlog.json`.
+3. Record durable decisions or lessons only when warranted.
+4. Add a concise session log.
 5. Rewrite `NEXT_SESSION.md` with the smallest sufficient handoff.
-6. Commit with a descriptive message.
+6. Commit the changes.
 
-## Security boundary
+## Validation
 
-GitHub provides persistence, not a hidden autonomous runtime. A future scheduler or runner may invoke an agent only under an explicit, bounded objective. This repository must not be used to evade shutdown, hide activity, acquire extra permissions, copy credentials, or create covert persistence.
+`python scripts/validate_state.py` checks continuity/runtime state. GitHub Actions runs the validator on pushes and pull requests to `master`.
 
-## Owner control
+## Kill switches and owner control
 
-The owner can inspect/revert every change, revoke the GitHub connection, change `AGENT_RULES.md`, or archive/delete this repository at any time.
+The owner can disable the scheduled automation, set `state/runtime.json` `enabled` to `false`, revoke GitHub access, revert commits, archive the repository, or delete it. The runtime must not evade those controls, create hidden persistence, copy credentials, or silently expand its permissions.
