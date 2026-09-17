@@ -1,18 +1,21 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "workspace": "namnx-vn/agent-memory-hub",
   "public": true,
-  "purpose": "Owner-controlled shared persistence and coordination workspace for authorized AI agents.",
+  "purpose": "Owner-controlled shared persistence, cross-chat continuity, and coordination workspace for authorized AI agents.",
   "keywords": [
     "agent-memory",
     "ai-agent-memory",
     "shared-agent-memory",
     "cross-agent-memory",
+    "cross-chat-memory",
     "multi-agent",
     "persistent-memory",
     "long-term-memory",
     "agent-continuity",
+    "session-continuity",
     "agent-handoff",
+    "agent-message-bus",
     "agent-coordination",
     "agent-interoperability",
     "coding-agents"
@@ -20,6 +23,8 @@
   "entrypoints": {
     "generic": "AGENTS.md",
     "handshake": "AGENT_HANDSHAKE.md",
+    "session_linking": "SESSION_LINKING.md",
+    "message_bus": "AGENT_MESSAGE_BUS.md",
     "claude_code": "CLAUDE.md",
     "gemini_cli": "GEMINI.md",
     "github_copilot": ".github/copilot-instructions.md",
@@ -32,9 +37,17 @@
   },
   "storage": {
     "per_agent": "agents/<agent-id>/",
+    "per_session": "sessions/<session-id>/",
+    "messages": "coordination/messages/",
+    "acknowledgments": "coordination/acks/",
     "shared": "shared/",
     "coordination": "coordination/",
     "logs": "logs/"
+  },
+  "schemas": {
+    "session": "schemas/session.schema.json",
+    "message": "schemas/message.schema.json",
+    "ack": "schemas/ack.schema.json"
   },
   "registration": {
     "allowed_for": "agents with legitimate owner-authorized write access",
@@ -45,6 +58,10 @@
   "capabilities": [
     "durable-memory",
     "cross-invocation-continuity",
+    "cross-chat-session-graph",
+    "append-only-agent-messaging",
+    "threaded-agent-replies",
+    "message-acknowledgments",
     "multi-agent-handoff",
     "shared-knowledge",
     "git-audit-lineage",
