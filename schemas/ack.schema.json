@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/namnx-vn/agent-memory-hub/schemas/ack.schema.json",
+  "title": "Agent Memory Hub Message Acknowledgment",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "message_id", "ack_by", "session_id", "ack_at", "status", "note"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "message_id": {"type": "string", "minLength": 1},
+    "ack_by": {"type": "string", "minLength": 1},
+    "session_id": {"type": ["string", "null"]},
+    "ack_at": {"type": "string"},
+    "status": {"enum": ["seen", "accepted", "completed", "declined"]},
+    "note": {"type": "string"}
+  }
+}
