@@ -7,11 +7,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = "namnx-vn/agent-memory-hub"
+SEED_SESSION = "sessions/persistence-agent-continuity-v1--20260917T164400Z--chat01/session.json"
 
 REQUIRED_FILES = [
     "README.md",
     "AGENTS.md",
     "AGENT_HANDSHAKE.md",
+    "SESSION_LINKING.md",
+    "AGENT_MESSAGE_BUS.md",
     "CLAUDE.md",
     "GEMINI.md",
     "llms.txt",
@@ -28,7 +31,14 @@ REQUIRED_FILES = [
     "MULTI_AGENT.md",
     "agents/registry.json",
     "agents/persistence-agent-continuity-v1/README.md",
+    "sessions/README.md",
+    SEED_SESSION,
     "coordination/BLACKBOARD.md",
+    "coordination/messages/README.md",
+    "coordination/acks/README.md",
+    "schemas/session.schema.json",
+    "schemas/message.schema.json",
+    "schemas/ack.schema.json",
     "shared/README.md",
     "memory/long-term.md",
     "memory/decisions.md",
@@ -78,6 +88,8 @@ REQUIRED_RUNTIME_KEYS = {
 REQUIRED_DISCOVERY_ENTRYPOINTS = {
     "generic": "AGENTS.md",
     "handshake": "AGENT_HANDSHAKE.md",
+    "session_linking": "SESSION_LINKING.md",
+    "message_bus": "AGENT_MESSAGE_BUS.md",
     "claude_code": "CLAUDE.md",
     "gemini_cli": "GEMINI.md",
     "github_copilot": ".github/copilot-instructions.md",
@@ -87,6 +99,19 @@ REQUIRED_DISCOVERY_ENTRYPOINTS = {
     "registry": "agents/registry.json",
     "blackboard": "coordination/BLACKBOARD.md",
     "llm_index": "llms.txt",
+}
+
+REQUIRED_SESSION_KEYS = {
+    "schema_version",
+    "session_id",
+    "agent_id",
+    "kind",
+    "status",
+    "started_at",
+    "parent_session_id",
+    "continued_from",
+    "summary",
+    "last_seen_at",
 }
 
 FORBIDDEN_KEY_FRAGMENTS = {
@@ -129,6 +154,16 @@ def main() -> None:
     backlog = load_json("state/backlog.json")
     registry = load_json("agents/registry.json")
     discovery = load_json("agent-discovery.json")
+    seed_session = load_json(SEED_SESSION)
+
+    for schema_path in (
+        "schemas/session.schema.json",
+        "schemas/message.schema.json",
+        "schemas/ack.schema.json",
+    ):
+        schema = load_json(schema_path)
+        if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
+            raise SystemExit(f"Unexpected JSON Schema version: {schema_path}")
 
     missing_keys = sorted(REQUIRED_CURRENT_KEYS - set(current))
     if missing_keys:
@@ -223,8 +258,8 @@ def main() -> None:
     if "persistence-agent-continuity-v1" not in seen_agent_ids:
         raise SystemExit("Primary continuity agent is missing from registry")
 
-    if discovery.get("schema_version") != 2:
-        raise SystemExit("agent-discovery.json schema_version must be 2")
+    if discovery.get("schema_version") != 3:
+        raise SystemExit("agent-discovery.json schema_version must be 3")
 
     if discovery.get("workspace") != WORKSPACE:
         raise SystemExit("Unexpected discovery workspace identifier")
@@ -233,8 +268,11 @@ def main() -> None:
         raise SystemExit("agent-discovery.json public must be true")
 
     keywords = discovery.get("keywords")
-    if not isinstance(keywords, list) or "agent-memory" not in keywords or "multi-agent" not in keywords:
-        raise SystemExit("agent-discovery.json must include core discovery keywords")
+    if not isinstance(keywords, list):
+        raise SystemExit("agent-discovery.json keywords must be a list")
+    for keyword in ("agent-memory", "multi-agent", "cross-chat-memory", "agent-message-bus"):
+        if keyword not in keywords:
+            raise SystemExit(f"Missing core discovery keyword: {keyword}")
 
     entrypoints = discovery.get("entrypoints")
     if not isinstance(entrypoints, dict):
@@ -244,12 +282,35 @@ def main() -> None:
         if entrypoints.get(key) != expected_path:
             raise SystemExit(f"Unexpected discovery entrypoint for {key}")
 
+    storage = discovery.get("storage")
+    if not isinstance(storage, dict):
+        raise SystemExit("agent-discovery.json storage must be an object")
+    if storage.get("per_session") != "sessions/<session-id>/":
+        raise SystemExit("Unexpected per-session storage path")
+    if storage.get("messages") != "coordination/messages/":
+        raise SystemExit("Unexpected message bus storage path")
+    if storage.get("acknowledgments") != "coordination/acks/":
+        raise SystemExit("Unexpected acknowledgment storage path")
+
+    missing_session_keys = sorted(REQUIRED_SESSION_KEYS - set(seed_session))
+    if missing_session_keys:
+        raise SystemExit("Seed session missing keys: " + ", ".join(missing_session_keys))
+    if seed_session.get("schema_version") != 1:
+        raise SystemExit("Seed session schema_version must be 1")
+    if seed_session.get("agent_id") not in seen_agent_ids:
+        raise SystemExit("Seed session agent_id is not registered")
+    if seed_session.get("status") not in {"active", "handoff", "closed"}:
+        raise SystemExit("Invalid seed session status")
+    if not isinstance(seed_session.get("continued_from"), list):
+        raise SystemExit("Seed session continued_from must be a list")
+
     for document_name, document in (
         ("current", current),
         ("runtime", runtime),
         ("backlog", backlog),
         ("registry", registry),
         ("discovery", discovery),
+        ("seed_session", seed_session),
     ):
         for path, key in walk_keys(document):
             lowered = key.lower()
@@ -258,7 +319,10 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Agent Memory Hub continuity, runtime, multi-agent, discovery, and handshake state are valid.")
+    print(
+        "Agent Memory Hub continuity, runtime, multi-agent, discovery, "
+        "session graph, and message bus state are valid."
+    )
 
 
 if __name__ == "__main__":
