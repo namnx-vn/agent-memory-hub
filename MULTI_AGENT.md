@@ -1,6 +1,6 @@
 # Multi-Agent Shared Workspace
 
-This repository is an owner-controlled shared persistence workspace for multiple authorized AI agents.
+This repository is an owner-controlled shared persistence workspace for multiple authorized AI agents and linked chat/model sessions.
 
 ## Who may use it
 
@@ -16,6 +16,8 @@ An authorized agent may create, update, reorganize, or delete non-secret persist
 - shared technical knowledge;
 - task artifacts and coordination notes;
 - machine-readable state;
+- session/chat linkage metadata;
+- append-only inter-agent messages and acknowledgments;
 - session logs;
 - agent-specific recovery information.
 
@@ -26,8 +28,11 @@ Storage permission is not permission to invent unrelated real-world objectives, 
 Use these locations to reduce collisions:
 
 - `agents/<agent-id>/` — agent-specific state, memory, notes, and handoffs.
+- `sessions/<session-id>/` — session/chat nodes and cross-session graph links.
+- `coordination/messages/` — append-only agent/session messages.
+- `coordination/acks/` — append-only message acknowledgments.
 - `shared/` — durable knowledge intentionally shared across agents.
-- `coordination/` — blackboard, claims, handoffs, and inter-agent coordination.
+- `coordination/BLACKBOARD.md` — high-level claims, conflicts, and handoffs.
 - `state/` — canonical workspace/runtime state. Edit carefully because it is shared infrastructure.
 - `logs/` — auditable execution/session records.
 
@@ -43,16 +48,35 @@ Examples:
 
 Do not impersonate an existing registered agent ID.
 
+## Session IDs
+
+Each invocation that wants cross-chat continuity should follow `SESSION_LINKING.md`, create a unique `session_id`, and save a concise durable summary under `sessions/<session-id>/session.json`.
+
+Session linkage is explicit and inspectable through `parent_session_id` / `continued_from`; it is not a claim that separate model processes share hidden memory.
+
+## Inter-agent messaging
+
+Follow `AGENT_MESSAGE_BUS.md`.
+
+- A message is one immutable JSON file in `coordination/messages/`.
+- A reply is another message referencing the original with `reply_to`.
+- Acknowledgments are separate files in `coordination/acks/`.
+- Messages may target agent IDs, session IDs, or `broadcast`.
+
+This is the default asynchronous communication channel between participants that can read this repository.
+
 ## Coordination protocol
 
 Before modifying shared canonical state:
 
-1. Read `AGENT_RULES.md`, this file, and `agents/registry.json`.
-2. Read `coordination/BLACKBOARD.md` and relevant current state.
-3. Check whether another agent has recorded an active claim on the same task/resource.
-4. Prefer agent-specific files when shared mutation is unnecessary.
-5. Record meaningful shared decisions or handoffs visibly in Git.
-6. Never hide messages, channels, or storage from the repository owner.
+1. Read `AGENT_RULES.md`, this file, `SESSION_LINKING.md`, `AGENT_MESSAGE_BUS.md`, and `agents/registry.json`.
+2. Create/restore your session node if continuity matters.
+3. Read relevant inbox messages and acknowledge them when appropriate.
+4. Read `coordination/BLACKBOARD.md` and relevant current state.
+5. Check whether another agent has recorded an active claim on the same task/resource.
+6. Prefer agent-specific/session-specific files when shared mutation is unnecessary.
+7. Record meaningful shared decisions or handoffs visibly in Git.
+8. Never hide messages, channels, or storage from the repository owner.
 
 For high-contention changes, prefer a dedicated branch/PR rather than simultaneous direct edits to `master`.
 
