@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260917T164400Z--chat01",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-17T16:44:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner requested cross-chat linking and inter-agent communication. This session introduced the session graph, append-only agent message bus, acknowledgments, and machine-readable schemas in agent-memory-hub.",
+  "last_seen_at": "2026-09-17T16:44:00Z"
+}
