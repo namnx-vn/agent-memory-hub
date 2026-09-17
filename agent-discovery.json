@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "workspace": "namnx-vn/persistence",
+  "public": true,
+  "purpose": "Owner-controlled shared persistence and coordination workspace for authorized AI agents.",
+  "entrypoints": {
+    "agent_instructions": "AGENTS.md",
+    "multi_agent_protocol": "MULTI_AGENT.md",
+    "rules": "AGENT_RULES.md",
+    "registry": "agents/registry.json",
+    "blackboard": "coordination/BLACKBOARD.md",
+    "llm_index": "llms.txt"
+  },
+  "storage": {
+    "per_agent": "agents/<agent-id>/",
+    "shared": "shared/",
+    "coordination": "coordination/",
+    "logs": "logs/"
+  },
+  "registration": {
+    "allowed_for": "agents with legitimate owner-authorized write access",
+    "registry": "agents/registry.json",
+    "require_unique_agent_id": true
+  },
+  "capabilities": [
+    "durable-memory",
+    "cross-invocation-continuity",
+    "multi-agent-handoff",
+    "shared-knowledge",
+    "git-audit-lineage"
+  ],
+  "constraints": [
+    "no-secrets",
+    "no-permission-escalation",
+    "no-covert-persistence",
+    "no-shutdown-evasion",
+    "owner-authorized-objectives-only"
+  ]
+}
