@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "workspace": "namnx-vn/persistence",
+  "mode": "transparent-persistence-workspace",
+  "status": "ready",
+  "objective": "Maintain auditable cross-session state for owner-authorized tasks.",
+  "active_task": null,
+  "active_task_source": null,
+  "last_updated": "2026-09-17T22:25:00+07:00",
+  "last_session": "bootstrap-2026-09-17",
+  "next_action": "Wait for an owner-authorized task, then update this state before or during meaningful work.",
+  "autonomous_runtime_enabled": false,
+  "secrets_allowed": false
+}

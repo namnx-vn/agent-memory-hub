@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "items": [],
+  "policy": "Only add executable backlog items that originate from an owner-authorized objective or an explicitly approved maintenance policy."
+}
