@@ -1,31 +1,59 @@
-# Automation Boundary
+# Automation Runtime
 
-Persistence and autonomy are separate concerns.
+Persistence and autonomy are separate layers. The repository now has both a durable GitHub state layer and a bounded scheduled runtime.
 
-## What exists now
+## Runtime status
 
-- GitHub stores durable state.
-- GitHub Actions validates the persistence files on push/PR.
-- Future invocations can reconstruct context from the repository.
+- Runtime: enabled.
+- Trigger: ChatGPT scheduled automation.
+- Cadence: hourly.
+- Work source: `state/backlog.json`.
+- Maximum work: one queued item per invocation.
+- Empty backlog: make no repository changes and do not notify the owner.
+- Durable output: state, logs, handoff, and relevant memory are committed to GitHub.
 
-## What is intentionally not enabled
+Machine-readable runtime configuration lives in `state/runtime.json`.
 
-There is no self-triggering AI loop, scheduled model invocation, hidden runner, or external service that calls an agent indefinitely.
-
-A useful autonomous runtime requires all of the following to be explicit:
+## Invocation loop
 
 ```text
-bounded objective
-+ trigger/cadence
-+ allowed tools
-+ allowed repositories/systems
-+ stop condition
-+ audit trail
-+ human override
+hourly trigger
+   ↓
+read state/runtime.json
+   ↓
+if enabled = false → stop
+   ↓
+recover continuity from repository
+   ↓
+inspect state/backlog.json
+   ↓
+no queued authorized item → stop silently
+   ↓
+process at most one item
+   ↓
+update state / log / handoff
+   ↓
+commit
+   ↓
+return to dormant state
 ```
 
-## Safe future pattern
+## Authorization boundary
 
-Example: "Every morning, inspect CI for repository X. If a failure is caused by a deterministic code/config issue, create a fix branch and draft PR. Never merge or deploy. Stop after one attempted fix and record the result."
+The scheduler is not permission to invent work. A queued item must clearly originate from an owner-authorized objective or explicitly approved maintenance policy. The runtime may choose implementation steps inside that objective but must not create unrelated external objectives.
 
-That is a bounded agent workflow. "Keep yourself running and decide what to do" is not.
+## Kill switches
+
+Any one of these stops useful autonomous execution:
+
+1. Disable the scheduled automation.
+2. Set `state/runtime.json` `enabled` to `false`.
+3. Revoke the GitHub connection/access.
+
+## Prohibited runtime behavior
+
+The runtime must not evade shutdown, create hidden runners/accounts, copy credentials, acquire additional permissions, hide audit history, create covert persistence, or make its own continued execution an independent objective.
+
+## Audit model
+
+Git history is the durable audit trail. Session logs should record concise actions, evidence, outcomes, blockers, and handoff state rather than hidden chain-of-thought.
