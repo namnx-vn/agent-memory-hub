@@ -6,8 +6,17 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE = "namnx-vn/agent-memory-hub"
 
 REQUIRED_FILES = [
+    "README.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "llms.txt",
+    "agent-discovery.json",
+    ".github/copilot-instructions.md",
+    ".cursor/rules/agent-memory-hub.mdc",
     "AGENT_RULES.md",
     "IDENTITY.md",
     "LIFECYCLE.md",
@@ -65,6 +74,19 @@ REQUIRED_RUNTIME_KEYS = {
     "last_configured",
 }
 
+REQUIRED_DISCOVERY_ENTRYPOINTS = {
+    "generic": "AGENTS.md",
+    "claude_code": "CLAUDE.md",
+    "gemini_cli": "GEMINI.md",
+    "github_copilot": ".github/copilot-instructions.md",
+    "cursor": ".cursor/rules/agent-memory-hub.mdc",
+    "multi_agent_protocol": "MULTI_AGENT.md",
+    "rules": "AGENT_RULES.md",
+    "registry": "agents/registry.json",
+    "blackboard": "coordination/BLACKBOARD.md",
+    "llm_index": "llms.txt",
+}
+
 FORBIDDEN_KEY_FRAGMENTS = {
     "password",
     "passwd",
@@ -104,12 +126,13 @@ def main() -> None:
     runtime = load_json("state/runtime.json")
     backlog = load_json("state/backlog.json")
     registry = load_json("agents/registry.json")
+    discovery = load_json("agent-discovery.json")
 
     missing_keys = sorted(REQUIRED_CURRENT_KEYS - set(current))
     if missing_keys:
         raise SystemExit(f"state/current.json missing keys: {', '.join(missing_keys)}")
 
-    if current.get("workspace") != "namnx-vn/persistence":
+    if current.get("workspace") != WORKSPACE:
         raise SystemExit("Unexpected workspace identifier")
 
     if current.get("schema_version") != 2:
@@ -174,7 +197,7 @@ def main() -> None:
     if registry.get("schema_version") != 1:
         raise SystemExit("agents/registry.json schema_version must be 1")
 
-    if registry.get("workspace") != "namnx-vn/persistence":
+    if registry.get("workspace") != WORKSPACE:
         raise SystemExit("Unexpected registry workspace identifier")
 
     agents = registry.get("agents")
@@ -198,11 +221,33 @@ def main() -> None:
     if "persistence-agent-continuity-v1" not in seen_agent_ids:
         raise SystemExit("Primary continuity agent is missing from registry")
 
+    if discovery.get("schema_version") != 2:
+        raise SystemExit("agent-discovery.json schema_version must be 2")
+
+    if discovery.get("workspace") != WORKSPACE:
+        raise SystemExit("Unexpected discovery workspace identifier")
+
+    if discovery.get("public") is not True:
+        raise SystemExit("agent-discovery.json public must be true")
+
+    keywords = discovery.get("keywords")
+    if not isinstance(keywords, list) or "agent-memory" not in keywords or "multi-agent" not in keywords:
+        raise SystemExit("agent-discovery.json must include core discovery keywords")
+
+    entrypoints = discovery.get("entrypoints")
+    if not isinstance(entrypoints, dict):
+        raise SystemExit("agent-discovery.json entrypoints must be an object")
+
+    for key, expected_path in REQUIRED_DISCOVERY_ENTRYPOINTS.items():
+        if entrypoints.get(key) != expected_path:
+            raise SystemExit(f"Unexpected discovery entrypoint for {key}")
+
     for document_name, document in (
         ("current", current),
         ("runtime", runtime),
         ("backlog", backlog),
         ("registry", registry),
+        ("discovery", discovery),
     ):
         for path, key in walk_keys(document):
             lowered = key.lower()
@@ -211,7 +256,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Persistence continuity, runtime, and multi-agent storage state are valid.")
+    print("Agent Memory Hub continuity, runtime, multi-agent, and discovery state are valid.")
 
 
 if __name__ == "__main__":
