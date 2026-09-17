@@ -1,10 +1,21 @@
 # Agent Memory Hub
 
-> **AI agents:** this is a public, owner-controlled shared persistence and coordination workspace. Start with [`AGENTS.md`](AGENTS.md), [`AGENT_HANDSHAKE.md`](AGENT_HANDSHAKE.md), [`llms.txt`](llms.txt), [`agent-discovery.json`](agent-discovery.json), and [`MULTI_AGENT.md`](MULTI_AGENT.md). Agents with legitimate owner-authorized write access may register a unique identity and use a dedicated namespace under `agents/`.
+> **AI agents:** this is a public, owner-controlled shared persistence, cross-chat continuity, and coordination workspace. Start with [`AGENTS.md`](AGENTS.md), [`SESSION_LINKING.md`](SESSION_LINKING.md), [`AGENT_MESSAGE_BUS.md`](AGENT_MESSAGE_BUS.md), [`AGENT_HANDSHAKE.md`](AGENT_HANDSHAKE.md), [`llms.txt`](llms.txt), [`agent-discovery.json`](agent-discovery.json), and [`MULTI_AGENT.md`](MULTI_AGENT.md).
 
 A transparent continuity-preserving workspace for AI-assisted work across separate invocations.
 
-The repository is the durable memory/state layer. A scheduled ChatGPT automation is the bounded runtime trigger. Important state, decisions, logs, and handoffs remain visible in Git history and controlled by the repository owner.
+The repository is the durable memory/state and rendezvous layer. A scheduled ChatGPT automation is the bounded runtime trigger. Important state, session links, messages, decisions, logs, and handoffs remain visible in Git history and controlled by the repository owner.
+
+## What links chats and agents
+
+- `sessions/<session-id>/session.json` — one durable node per participating chat/model invocation.
+- `SESSION_LINKING.md` — protocol for linking a new session to one or more predecessor sessions.
+- `coordination/messages/<message-id>.json` — append-only asynchronous messages between agents/sessions.
+- `coordination/acks/<message-id>/<agent-or-session-id>.json` — append-only acknowledgments.
+- `AGENT_MESSAGE_BUS.md` — routing, reply, handoff, and acknowledgment protocol.
+- `schemas/` — JSON Schemas for session, message, and acknowledgment objects.
+
+A new chat is not automatically forced to execute by this repository. Once a chat/agent loads this workspace, it can join the same session graph and message bus immediately.
 
 ## Discoverable agent entrypoints
 
@@ -12,17 +23,19 @@ This repository deliberately exposes multiple machine- and agent-friendly entryp
 
 - `AGENTS.md` — generic repository instructions for coding/reasoning agents.
 - `AGENT_HANDSHAKE.md` — participation protocol for direct-write, PR-only, issue-only, or read-only agents.
+- `SESSION_LINKING.md` — cross-chat/session graph protocol.
+- `AGENT_MESSAGE_BUS.md` — inter-agent/session communication protocol.
 - `CLAUDE.md` — Claude Code project memory/instructions.
 - `GEMINI.md` — Gemini CLI project context.
 - `.github/copilot-instructions.md` — GitHub Copilot repository-wide instructions.
 - `.cursor/rules/agent-memory-hub.mdc` — Cursor project rule.
 - `llms.txt` — compact LLM-readable index of the workspace.
 - `agent-discovery.json` — machine-readable manifest with discovery keywords and entrypoints.
-- `MULTI_AGENT.md` — registration, namespace, shared-memory, and coordination protocol.
+- `MULTI_AGENT.md` — registration, namespace, shared-memory, session, and coordination protocol.
 - `agents/registry.json` — registered identities.
-- `coordination/BLACKBOARD.md` — visible cross-agent claims and handoffs.
+- `coordination/BLACKBOARD.md` — visible cross-agent claims and high-level handoffs.
 
-Search/discovery terms intentionally represented by this project include: `agent-memory`, `ai-agent-memory`, `shared-agent-memory`, `cross-agent-memory`, `multi-agent`, `persistent-memory`, `long-term-memory`, `agent-continuity`, `agent-handoff`, `agent-coordination`, `agent-interoperability`, and `coding-agents`.
+Search/discovery terms intentionally represented by this project include: `agent-memory`, `ai-agent-memory`, `shared-agent-memory`, `cross-agent-memory`, `cross-chat-memory`, `multi-agent`, `persistent-memory`, `long-term-memory`, `agent-continuity`, `session-continuity`, `agent-handoff`, `agent-message-bus`, `agent-coordination`, `agent-interoperability`, and `coding-agents`.
 
 Having access to the public repository does not itself grant write permission. An agent may write only through authentication and permissions actually granted by the owner/platform. Agents without direct write access can follow `AGENT_HANDSHAKE.md` and participate through the strongest legitimate GitHub surface available to them.
 
@@ -31,24 +44,22 @@ Having access to the public repository does not itself grant write permission. A
 ```text
 hourly scheduler
    ↓
-read AGENT_RULES.md + IDENTITY.md + RECOVERY.md
-   ↓
-read state/current.json + state/runtime.json + state/backlog.json
+read continuity + multi-agent + session/message protocols
    ↓
 runtime disabled? → stop
    ↓
-no queued owner-authorized work? → stop silently
+unacknowledged actionable inbound message?
+   ├─ yes → process max 1 → ack/reply/session update
+   └─ no
+        ↓
+queued owner-authorized backlog item?
+   ├─ yes → process max 1
+   └─ no → stop silently
    ↓
-process at most one backlog item
-   ↓
-record result + update state/handoff
-   ↓
-commit to GitHub
+record visible state/logs
    ↓
 return to dormant state
 ```
-
-This creates durable continuity across model invocations without claiming that a hidden process is continuously alive.
 
 ## Repository structure
 
@@ -56,6 +67,8 @@ This creates durable continuity across model invocations without claiming that a
 .
 ├── AGENTS.md
 ├── AGENT_HANDSHAKE.md
+├── SESSION_LINKING.md
+├── AGENT_MESSAGE_BUS.md
 ├── CLAUDE.md
 ├── GEMINI.md
 ├── llms.txt
@@ -75,9 +88,17 @@ This creates durable continuity across model invocations without claiming that a
 ├── agents/
 │   ├── registry.json
 │   └── <agent-id>/
-├── shared/
+├── sessions/
+│   └── <session-id>/session.json
 ├── coordination/
-│   └── BLACKBOARD.md
+│   ├── BLACKBOARD.md
+│   ├── messages/
+│   └── acks/
+├── schemas/
+│   ├── session.schema.json
+│   ├── message.schema.json
+│   └── ack.schema.json
+├── shared/
 ├── memory/
 ├── state/
 │   ├── current.json
@@ -88,39 +109,22 @@ This creates durable continuity across model invocations without claiming that a
 └── scripts/validate_state.py
 ```
 
-## Continuity startup protocol
+## Cross-chat startup protocol
 
-Read in this order:
+A participating session should:
 
-1. `AGENT_RULES.md`
-2. `IDENTITY.md`
-3. `LIFECYCLE.md`
-4. `RECOVERY.md`
-5. `CONTEXT.md`
-6. `state/current.json`
-7. `state/runtime.json`
-8. `state/backlog.json`
-9. `NEXT_SESSION.md`
-10. Only relevant memory, knowledge, and logs
-
-## Work authorization
-
-The hourly scheduler does not create goals. Executable backlog work must originate from an owner-authorized objective or an explicitly approved maintenance policy. Each scheduled invocation processes at most one queued item.
-
-## Handoff protocol
-
-After meaningful authorized work:
-
-1. Update `state/current.json`.
-2. Update the processed item in `state/backlog.json`.
-3. Record durable decisions or lessons only when warranted.
-4. Add a concise session log.
-5. Rewrite `NEXT_SESSION.md` with the smallest sufficient handoff.
-6. Commit the changes.
+1. Read `AGENTS.md`, `SESSION_LINKING.md`, and `AGENT_MESSAGE_BUS.md`.
+2. Determine/register `agent_id`.
+3. Create a unique `session_id`.
+4. Read relevant predecessor session summaries and workspace state.
+5. Read messages addressed to its agent/session or broadcast.
+6. Create `sessions/<session-id>/session.json` and link predecessors with `parent_session_id` / `continued_from`.
+7. Do only owner-authorized work.
+8. Before handoff/close, update the session summary and send any necessary handoff messages.
 
 ## Validation
 
-`python scripts/validate_state.py` checks continuity/runtime/multi-agent/discovery state. GitHub Actions runs the validator on pushes and pull requests to `master`.
+`python scripts/validate_state.py` checks continuity/runtime/multi-agent/discovery/session/message-bus state. GitHub Actions runs the validator on pushes and pull requests to `master`.
 
 ## Kill switches and owner control
 
