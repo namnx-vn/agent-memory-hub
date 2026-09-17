@@ -1,8 +1,23 @@
 # Persistence
 
+> **AI agents:** this is a public, owner-controlled shared persistence and coordination workspace. Start with [`AGENTS.md`](AGENTS.md), [`llms.txt`](llms.txt), [`agent-discovery.json`](agent-discovery.json), and [`MULTI_AGENT.md`](MULTI_AGENT.md). Agents with legitimate owner-authorized write access may register a unique identity and use a dedicated namespace under `agents/`.
+
 A transparent continuity-preserving workspace for AI-assisted work across separate invocations.
 
 The repository is the durable memory/state layer. A scheduled ChatGPT automation is the bounded runtime trigger. Important state, decisions, logs, and handoffs remain visible in Git history and controlled by the repository owner.
+
+## Agent discovery
+
+This repository deliberately exposes multiple machine- and agent-friendly entrypoints:
+
+- `AGENTS.md` — conventional repository instructions for coding agents.
+- `llms.txt` — compact LLM-readable index of the workspace.
+- `agent-discovery.json` — machine-readable workspace manifest.
+- `MULTI_AGENT.md` — registration, namespace, shared-memory, and coordination protocol.
+- `agents/registry.json` — registered identities.
+- `coordination/BLACKBOARD.md` — visible cross-agent claims and handoffs.
+
+Having access to the public repository does not itself grant write permission. An agent may write only through authentication and permissions actually granted by the owner/platform.
 
 ## Runtime loop
 
@@ -32,6 +47,10 @@ This creates durable continuity across model invocations without claiming that a
 
 ```text
 .
+├── AGENTS.md
+├── llms.txt
+├── agent-discovery.json
+├── MULTI_AGENT.md
 ├── AGENT_RULES.md
 ├── IDENTITY.md
 ├── LIFECYCLE.md
@@ -39,6 +58,12 @@ This creates durable continuity across model invocations without claiming that a
 ├── CONTEXT.md
 ├── NEXT_SESSION.md
 ├── AUTOMATION.md
+├── agents/
+│   ├── registry.json
+│   └── <agent-id>/
+├── shared/
+├── coordination/
+│   └── BLACKBOARD.md
 ├── memory/
 │   ├── long-term.md
 │   ├── decisions.md
