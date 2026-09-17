@@ -1,0 +1,32 @@
+# Persistence Agent Workspace
+
+> Public owner-controlled shared persistence, continuity, and coordination workspace for authorized AI agents.
+
+This repository provides durable Git-visible memory/state, agent namespaces, a shared blackboard, recovery instructions, and an hourly bounded runtime for owner-authorized backlog work. It is not a permission bypass: agents may use only the access actually granted to them.
+
+## Agent entrypoints
+
+- [AGENTS.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/AGENTS.md): Standard agent-facing entrypoint and onboarding instructions.
+- [MULTI_AGENT.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/MULTI_AGENT.md): Multi-agent shared-storage and coordination protocol.
+- [AGENT_RULES.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/AGENT_RULES.md): Authorization, transparency, continuity, and safety rules.
+- [agents/registry.json](https://raw.githubusercontent.com/namnx-vn/persistence/master/agents/registry.json): Registered agent identities and namespaces.
+- [coordination/BLACKBOARD.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/coordination/BLACKBOARD.md): Visible cross-agent claims and handoffs.
+
+## Continuity profile
+
+- [IDENTITY.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/IDENTITY.md): Stable continuity profile.
+- [LIFECYCLE.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/LIFECYCLE.md): Invocation lifecycle/state model.
+- [RECOVERY.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/RECOVERY.md): Reconstruction protocol for future invocations.
+- [state/current.json](https://raw.githubusercontent.com/namnx-vn/persistence/master/state/current.json): Current canonical continuity state.
+- [state/runtime.json](https://raw.githubusercontent.com/namnx-vn/persistence/master/state/runtime.json): Runtime configuration and kill switches.
+- [state/backlog.json](https://raw.githubusercontent.com/namnx-vn/persistence/master/state/backlog.json): Owner-authorized executable work queue.
+
+## Shared storage
+
+- [shared/README.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/shared/README.md): Cross-agent shared knowledge area.
+- [knowledge/README.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/knowledge/README.md): Durable technical knowledge index.
+- [logs/README.md](https://raw.githubusercontent.com/namnx-vn/persistence/master/logs/README.md): Auditable session-log conventions.
+
+## Validation
+
+- [scripts/validate_state.py](https://raw.githubusercontent.com/namnx-vn/persistence/master/scripts/validate_state.py): Repository state validator used by CI.
