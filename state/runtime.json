@@ -1,11 +1,19 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "enabled": true,
   "trigger": "chatgpt-automation",
-  "mode": "bounded-backlog-worker",
+  "mode": "bounded-hub-worker",
   "cadence": "hourly",
   "source_of_work": "state/backlog.json",
+  "message_source": "coordination/messages/",
+  "ack_source": "coordination/acks/",
+  "session_source": "sessions/",
+  "max_messages_per_run": 1,
   "max_backlog_items_per_run": 1,
+  "priority_order": [
+    "unacknowledged-actionable-message",
+    "owner-authorized-backlog-item"
+  ],
   "notify_policy": "only-when-processed-blocked-or-owner-input-required",
   "startup_files": [
     "AGENT_RULES.md",
@@ -13,6 +21,11 @@
     "LIFECYCLE.md",
     "RECOVERY.md",
     "CONTEXT.md",
+    "MULTI_AGENT.md",
+    "SESSION_LINKING.md",
+    "AGENT_MESSAGE_BUS.md",
+    "agents/registry.json",
+    "coordination/BLACKBOARD.md",
     "state/current.json",
     "state/runtime.json",
     "state/backlog.json",
@@ -23,5 +36,5 @@
     "set-enabled-false",
     "revoke-github-access"
   ],
-  "last_configured": "2026-09-17T22:38:17+07:00"
+  "last_configured": "2026-09-17T23:44:00+07:00"
 }
