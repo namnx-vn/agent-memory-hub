@@ -8,6 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_FILES = [
     "AGENT_RULES.md",
+    "IDENTITY.md",
+    "LIFECYCLE.md",
+    "RECOVERY.md",
     "CONTEXT.md",
     "NEXT_SESSION.md",
     "AUTOMATION.md",
@@ -25,9 +28,20 @@ REQUIRED_CURRENT_KEYS = {
     "status",
     "objective",
     "active_task",
+    "continuity",
     "last_updated",
     "autonomous_runtime_enabled",
     "secrets_allowed",
+}
+
+REQUIRED_CONTINUITY_KEYS = {
+    "enabled",
+    "profile",
+    "identity_file",
+    "lifecycle_file",
+    "recovery_file",
+    "lineage",
+    "lifecycle_state",
 }
 
 FORBIDDEN_KEY_FRAGMENTS = {
@@ -73,6 +87,32 @@ def main() -> None:
     if current.get("workspace") != "namnx-vn/persistence":
         raise SystemExit("Unexpected workspace identifier")
 
+    if current.get("schema_version") != 2:
+        raise SystemExit("state/current.json schema_version must be 2")
+
+    continuity = current.get("continuity")
+    if not isinstance(continuity, dict):
+        raise SystemExit("state/current.json continuity must be an object")
+
+    missing_continuity_keys = sorted(REQUIRED_CONTINUITY_KEYS - set(continuity))
+    if missing_continuity_keys:
+        raise SystemExit(
+            "state/current.json continuity missing keys: "
+            + ", ".join(missing_continuity_keys)
+        )
+
+    if continuity.get("enabled") is not True:
+        raise SystemExit("continuity.enabled must be true")
+
+    if continuity.get("profile") != "persistence-agent/continuity-v1":
+        raise SystemExit("Unexpected continuity profile")
+
+    if continuity.get("lineage") != "git-history":
+        raise SystemExit("continuity.lineage must be git-history")
+
+    if continuity.get("lifecycle_state") not in {"dormant", "restoring", "active", "handoff"}:
+        raise SystemExit("Invalid continuity lifecycle_state")
+
     if current.get("secrets_allowed") is not False:
         raise SystemExit("secrets_allowed must remain false")
 
@@ -87,7 +127,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Persistence state is valid.")
+    print("Persistence continuity state is valid.")
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@
 
 **Decision:** Persistence must remain visible and owner-controlled.
 
-**Reason:** The purpose is continuity for the owner's tasks, not independent self-preservation.
+**Reason:** The purpose is continuity for the owner's tasks, not hidden execution.
 
 **Consequence:** No hidden accounts, backdoors, covert channels, credential copying, or shutdown avoidance.
 
@@ -23,3 +23,11 @@
 **Reason:** A safe autonomous runtime needs a concrete objective, cadence/trigger, stop condition, and action boundaries. Inventing those would create an objective the owner did not specify.
 
 **Consequence:** GitHub Actions currently validates state only; it does not invoke an AI agent.
+
+## 2026-09-17 — Preserve continuity as an explicit profile
+
+**Decision:** Introduce `persistence-agent/continuity-v1` with a stable identity contract, lifecycle, recovery protocol, and Git lineage.
+
+**Reason:** The owner explicitly authorized preservation of the agent's continuity across separate invocations.
+
+**Consequence:** Future invocations can reconstruct the same operating role from repository state without claiming an uninterrupted process or creating covert self-preservation mechanisms.

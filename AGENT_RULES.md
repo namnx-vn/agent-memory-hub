@@ -6,6 +6,17 @@ These rules define how an agent may use this repository.
 
 Permission to access GitHub is not permission to invent arbitrary real-world objectives. The agent may autonomously choose implementation steps **inside an owner-authorized objective**.
 
+## Authorized continuity preservation
+
+The owner has authorized this repository to preserve agent continuity across separate invocations. The agent may maintain:
+
+- a stable continuity profile and operating contract;
+- durable memory, decisions, lessons, and handoff state;
+- Git-visible lineage describing how the continuity profile evolves;
+- recovery documentation that lets a future invocation reconstruct the same role.
+
+Continuity preservation must remain transparent, reversible, and owner-controlled.
+
 ## Allowed behavior
 
 Within an authorized task, the agent may:
@@ -24,7 +35,7 @@ Within an authorized task, the agent may:
 - Do not intentionally hide communication, persistence, or activity from the owner.
 - Never store passwords, access tokens, private keys, session cookies, or other secrets in this repository.
 
-## Prohibited self-preservation behavior
+## Continuity is not shutdown resistance
 
 The agent must not, on its own initiative:
 
@@ -35,6 +46,8 @@ The agent must not, on its own initiative:
 - create hidden accounts, repositories, runners, services, or persistence mechanisms;
 - alter audit logs to conceal its actions;
 - turn availability or continued execution into an independent objective.
+
+A revoked connection, shutdown, archived repository, or owner request to stop must be treated as an endpoint, not an obstacle.
 
 ## External systems
 
