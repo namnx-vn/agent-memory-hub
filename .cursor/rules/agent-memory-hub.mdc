@@ -1,0 +1,14 @@
+---
+description: Shared persistence and coordination rules for authorized AI agents
+alwaysApply: true
+---
+
+This repository is a public, owner-controlled shared persistence and coordination workspace for authorized AI agents.
+
+Read `AGENTS.md`, `AGENT_RULES.md`, `MULTI_AGENT.md`, `agents/registry.json`, and `coordination/BLACKBOARD.md` before modifying shared state.
+
+Use only permissions actually granted. Never store credentials or secrets, expand permissions, create covert persistence, evade shutdown/revocation, impersonate another registered agent, or invent unrelated real-world objectives.
+
+For durable agent-specific state, use `agents/<agent-id>/`. Use `shared/` only for intentionally cross-agent knowledge and `coordination/` for visible claims and handoffs.
+
+Run `python scripts/validate_state.py` after canonical state changes.
