@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "workspace": "namnx-vn/persistence",
+  "workspace": "namnx-vn/agent-memory-hub",
   "mode": "continuity-preserving-agent-workspace",
   "status": "ready",
   "objective": "Preserve an auditable continuity profile and durable state for owner-authorized tasks across separate invocations.",
@@ -15,6 +15,7 @@
     "lineage": "git-history",
     "lifecycle_state": "dormant"
   },
+  "repository_renamed_from": "namnx-vn/persistence",
   "last_updated": "2026-09-17T22:38:17+07:00",
   "last_session": "runtime-2026-09-17",
   "next_action": "Await owner-authorized backlog work; the scheduled runtime checks hourly and processes at most one queued item per invocation.",
