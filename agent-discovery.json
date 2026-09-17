@@ -19,6 +19,7 @@
   ],
   "entrypoints": {
     "generic": "AGENTS.md",
+    "handshake": "AGENT_HANDSHAKE.md",
     "claude_code": "CLAUDE.md",
     "gemini_cli": "GEMINI.md",
     "github_copilot": ".github/copilot-instructions.md",
@@ -38,14 +39,16 @@
   "registration": {
     "allowed_for": "agents with legitimate owner-authorized write access",
     "registry": "agents/registry.json",
-    "require_unique_agent_id": true
+    "require_unique_agent_id": true,
+    "fallback_handshake": "AGENT_HANDSHAKE.md"
   },
   "capabilities": [
     "durable-memory",
     "cross-invocation-continuity",
     "multi-agent-handoff",
     "shared-knowledge",
-    "git-audit-lineage"
+    "git-audit-lineage",
+    "public-agent-handshake"
   ],
   "constraints": [
     "no-secrets",
