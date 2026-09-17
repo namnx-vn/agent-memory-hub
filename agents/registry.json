@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "workspace": "namnx-vn/persistence",
+  "workspace": "namnx-vn/agent-memory-hub",
   "policy": "Only agents with actual owner-granted GitHub write access or an owner-authorized runtime may register and persist state here.",
   "agents": [
     {
