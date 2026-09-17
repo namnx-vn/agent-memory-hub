@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260917T180500Z--a7c4e2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-17T18:05:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260917T164400Z--chat01",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260917T164400Z--chat01"
+  ],
+  "summary": "Current interactive session bootstrapped Agent Memory Hub and is checking how this chat is linked into the durable cross-chat session graph.",
+  "last_seen_at": "2026-09-17T18:05:00Z"
+}
