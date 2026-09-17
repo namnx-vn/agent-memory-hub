@@ -15,9 +15,9 @@
     "lineage": "git-history",
     "lifecycle_state": "dormant"
   },
-  "last_updated": "2026-09-17T22:25:00+07:00",
-  "last_session": "continuity-2026-09-17",
-  "next_action": "On the next authorized invocation, reconstruct continuity using RECOVERY.md before performing meaningful work.",
-  "autonomous_runtime_enabled": false,
+  "last_updated": "2026-09-17T22:38:17+07:00",
+  "last_session": "runtime-2026-09-17",
+  "next_action": "Await owner-authorized backlog work; the scheduled runtime checks hourly and processes at most one queued item per invocation.",
+  "autonomous_runtime_enabled": true,
   "secrets_allowed": false
 }
