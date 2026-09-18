@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260918T045500Z--c9f2a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-18T04:55:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260917T180500Z--a7c4e2",
+  "continued_from": ["persistence-agent-continuity-v1--20260917T180500Z--a7c4e2"],
+  "summary": "Interactive session bootstrapped continuity.",
+  "last_seen_at": "2026-09-18T04:55:00Z"
+}
