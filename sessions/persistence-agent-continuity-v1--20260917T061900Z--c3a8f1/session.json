@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260917T061900Z--c3a8f1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-09-17T06:19:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Completed DevOps-learning Session 8: Docker Compose and request path. Built frontend+API stack; traced host/Nginx/Docker DNS/API flow; debugged missing runtime env, host port conflict, and stale frontend network attachment; tested 502/recovery, graceful SIGTERM shutdown, healthchecks, restart policy, and crash recovery. Detailed notes persisted to namnx-vn/devops-learning Notes/Session-8/index.md. Next session: Session 9 Cache & Release Frontend.",
+  "last_seen_at": "2026-09-18T13:58:00Z"
+}
