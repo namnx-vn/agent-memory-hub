@@ -9,6 +9,6 @@
   "continued_from": [
     "persistence-agent-continuity-v1--20260917T061900Z--c3a8f1"
   ],
-  "summary": "DevOps-learning Session 9 Cache & Release Frontend completed. Covered cache matrix for index.html/runtime-config/hashed assets; verified ETag revalidation and 304; fixed SPA fallback so missing assets return 404; explained release A/B, lazy-loaded chunk failures, assets-first HTML-last deployment, old asset retention and rollback; differentiated browser/CDN/service-worker caches; and covered CDN stale HTML debugging, targeted purge/invalidation, and cache-policy prevention.",
-  "last_seen_at": "2026-09-19T13:42:00Z"
+  "summary": "DevOps-learning Session 9 Cache & Release Frontend completed and persisted to namnx-vn/devops-learning at Notes/Session-9/index.md. Covered cache matrix, ETag/304, correct SPA fallback vs asset 404, hashed assets, assets-first HTML-last release flow, lazy-chunk failures, old asset retention vs cache retention, browser/CDN/service-worker cache debugging, CDN invalidation, and current Docker limitation with no origin old-asset retention. README progress updated to 9/30. Next: Session 10 Artifact & Rollback.",
+  "last_seen_at": "2026-09-19T14:12:00Z"
 }
