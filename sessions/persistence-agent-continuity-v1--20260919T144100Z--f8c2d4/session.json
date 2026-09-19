@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T14:41:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T141600Z--c4a91e",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T141600Z--c4a91e"
+  ],
+  "summary": "Owner provided Portable Context Package v2 from another ChatGPT account and requested an update to the existing agent-memory-hub import. This session will normalize/deduplicate the v2 package into durable shared context while preserving historical/stale markers and excluding secrets/private auth data.",
+  "last_seen_at": "2026-09-19T14:41:00Z"
+}
