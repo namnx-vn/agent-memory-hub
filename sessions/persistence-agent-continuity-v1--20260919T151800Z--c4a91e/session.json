@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T151800Z--c4a91e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T15:18:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Owner is starting a structured long-term communication-skills project: improve idea generation, expression, conversational flexibility, and communication across professional and everyday scenarios. This session will design and run deliberate practice with expert role-play, feedback, and progression.",
+  "last_seen_at": "2026-09-19T15:18:00Z"
+}
