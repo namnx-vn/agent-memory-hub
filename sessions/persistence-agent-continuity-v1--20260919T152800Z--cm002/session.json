@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T152800Z--cm002",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T15:28:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T152500Z--cm001",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T152500Z--cm001"
+  ],
+  "summary": "Communication Mastery interactive session. User asks who the assistant will role-play as today and what topic to discuss; continue deliberate communication practice.",
+  "last_seen_at": "2026-09-19T15:28:00Z"
+}
