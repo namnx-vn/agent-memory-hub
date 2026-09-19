@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T141600Z--c4a91e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T14:16:00Z",
+  "parent_session_id": "runtime-2026-09-17",
+  "continued_from": [
+    "runtime-2026-09-17"
+  ],
+  "summary": "Interactive owner session. Current task: provide a grounded assessment of the user based on durable conversation context and observed learning/work patterns; avoid sensitive profiling and distinguish observations from inference.",
+  "last_seen_at": "2026-09-19T14:16:00Z"
+}
