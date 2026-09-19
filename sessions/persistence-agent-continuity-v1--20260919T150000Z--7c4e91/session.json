@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T150000Z--7c4e91",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T15:00:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Interactive Technical Explanation Gym session. Owner asked to run the project prompt using the attached 30-day topic plan; begin with the first planned topic and coach via question-first review/challenge/refine flow.",
+  "last_seen_at": "2026-09-19T15:00:00Z"
+}
