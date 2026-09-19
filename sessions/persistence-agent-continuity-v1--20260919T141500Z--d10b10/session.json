@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T141500Z--d10b10",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T14:15:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner requested continuation of DevOps Learning Session 10. Plan confirmed: Artifact & rollback local — create a release manifest with commit/checksum/public config/image tag or digest, run v1/v2, smoke test, and rollback using the saved v1 artifact without rebuilding source.",
+  "last_seen_at": "2026-09-19T14:15:00Z"
+}
