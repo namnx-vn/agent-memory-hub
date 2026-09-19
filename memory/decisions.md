@@ -26,7 +26,7 @@
 
 ## 2026-09-17 — Preserve continuity as an explicit profile
 
-**Decision:** Introduce `persistence-agent/continuity-v1` with a stable identity contract, lifecycle, recovery protocol, and Git lineage.
+**Decision:** Introduce persistence-agent/continuity-v1 with a stable identity contract, lifecycle, recovery protocol, and Git lineage.
 
 **Reason:** The owner explicitly authorized preservation of the agent's continuity across separate invocations.
 
@@ -38,4 +38,12 @@
 
 **Reason:** This closes the missing trigger/runtime layer without placing credentials in the repository or creating a hidden external runner.
 
-**Consequence:** `state/runtime.json` is the machine-readable runtime contract. Empty backlog checks stop silently. The owner retains explicit kill switches through the automation, runtime state, and GitHub access.
+**Consequence:** state/runtime.json is the machine-readable runtime contract. Empty backlog checks stop silently. The owner retains explicit kill switches through the automation, runtime state, and GitHub access.
+
+## 2026-09-19 — Normalize imported user context instead of copying raw handoffs
+
+**Decision:** Treat shared/user-context.md as the canonical normalized profile for portable context imported by the owner from other AI/chat accounts.
+
+**Reason:** Raw handoff packages may contain duplicated, stale, overly detailed, or private/project-specific material. Continuity is better served by a compact profile with explicit freshness semantics.
+
+**Consequence:** Imports are classified as Stable, Historical, or Possibly outdated; newer owner instructions override older imports; secrets/private auth data, hidden reasoning, transient terminal output, and unnecessary proprietary details are excluded.
