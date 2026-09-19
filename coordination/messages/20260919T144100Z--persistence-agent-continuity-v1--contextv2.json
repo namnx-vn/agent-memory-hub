@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20260919T144100Z--persistence-agent-continuity-v1--contextv2",
+  "created_at": "2026-09-19T14:41:00Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "Portable cross-account user context v2 imported",
+  "body": "Owner supplied Portable Context Package v2. Canonical normalized profile is now shared/user-context.md. Load it for relevant professional/technical/learning tasks. Respect Stable/Historical/Possibly outdated markers; do not ask the owner to restate known background, and do not persist secrets/private auth/hidden reasoning. See logs/2026-09-19-portable-context-v2.md and session persistence-agent-continuity-v1--20260919T144100Z--f8c2d4.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
