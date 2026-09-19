@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260919T152500Z--cm001",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-19T15:25:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Initialized Communication Mastery project from the owner's prior communication-improvement conversation. Focus: idea generation, clear expression, reducing conversational blocks, deliberate practice and role-play across professional and everyday situations, with expert-level scenario coaching and progressive feedback.",
+  "last_seen_at": "2026-09-19T15:25:00Z"
+}
