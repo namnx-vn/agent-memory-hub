@@ -84,9 +84,16 @@ Owner-provided current career detail for CV/interview tailoring:
 
 - Appro is a product company serving both B2C and B2B use cases in the UAE banking/fintech market.
 - Banking clients mentioned by the owner include IB, Reem Bank (formerly Reem Finance), ADIB, FAB, and Citi Bank.
-- The owner is the primary frontend owner/lead for the Reem Bank and Citi Bank projects.
+- Reem Bank: the owner served as frontend/team lead for a 5-person frontend/mobile team (3 Web, 2 Mobile); the product was released to production.
+- Citi Bank: the owner worked as a developer on a small SDK embedded into both host web and host mobile applications; the SDK was released to production.
 - The owner also provides frontend support for IB and ADIB.
 - Use this detail when tailoring CVs for banking/fintech roles, but do not imply responsibilities, technologies, production scope, or client relationships beyond what the owner explicitly stated.
+
+## Hieu Minh early-career context
+
+- Hieu Minh was an early-career period progressing from intern to fresher.
+- Do not describe Micro-Frontend experience for this role when tailoring the CV.
+- Keep responsibility/impact wording appropriate to intern/fresher seniority.
 
 ## Career growth focus
 
