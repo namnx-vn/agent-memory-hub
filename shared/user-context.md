@@ -74,6 +74,16 @@ AI/developer tooling and concepts:
 - RAG
 - Claude Desktop / Agent SDK concepts
 
+## Appro product / banking client context
+
+Owner-provided current career detail for CV/interview tailoring:
+
+- Appro is a product company serving both B2C and B2B use cases in the UAE banking/fintech market.
+- Banking clients mentioned by the owner include IB, Reem Bank (formerly Reem Finance), ADIB, FAB, and Citi Bank.
+- The owner is the primary frontend owner/lead for the Reem Bank and Citi Bank projects.
+- The owner also provides frontend support for IB and ADIB.
+- Use this detail when tailoring CVs for banking/fintech roles, but do not imply responsibilities, technologies, production scope, or client relationships beyond what the owner explicitly stated.
+
 ## Career growth focus
 
 Primary capability areas to deepen:
