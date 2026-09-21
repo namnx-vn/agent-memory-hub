@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260921T020300Z--a91c4e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-21T02:03:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Reviewing the owner's uploaded Senior Frontend CV against Finative Frontend Developer (Web) banking JD and preparing targeted CV improvements. No secrets or full transcript stored.",
+  "last_seen_at": "2026-09-21T02:03:00Z"
+}
