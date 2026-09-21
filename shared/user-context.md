@@ -756,3 +756,7 @@ Do not persist into shared context:
 - unnecessarily sensitive or proprietary project details
 
 Newer owner instructions override this imported package whenever they conflict.
+
+## Hieu Minh early-career clarification
+
+Owner clarified for CV tailoring that the Hieu Minh period was early-career (intern/fresher level). Do not describe Micro-Frontend ownership or senior-level architecture responsibility there. Keep the experience focused on foundational frontend development, React/TypeScript, UI implementation, API integration, bug fixing, and learning/team collaboration as supported by the CV.
