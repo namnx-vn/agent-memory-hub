@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260921T164300Z--b7e4a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-21T16:43:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "User asks to understand banking-domain terminology in UAE digital account/product onboarding flows (PL, CC, ML, CASA), including checks labeled S8, T24, MORE.",
+  "last_seen_at": "2026-09-21T16:43:00Z"
+}
