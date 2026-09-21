@@ -75,6 +75,10 @@ AI/developer tooling and concepts:
 - Claude Desktop / Agent SDK concepts
 
 ## Appro product / banking client context
+Additional CV-tailoring corrections from owner (2026-09-21):
+- The Appro projects where the owner was primary frontend owner/lead (Reem Bank and Citi Bank) have reached production.
+- Hieu Minh was the owner's intern-to-fresher stage; do not describe Micro-Frontend ownership/implementation there, and avoid overstating senior/mentoring responsibilities for that period.
+
 
 Owner-provided current career detail for CV/interview tailoring:
 
