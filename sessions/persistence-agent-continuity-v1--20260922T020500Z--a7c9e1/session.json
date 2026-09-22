@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260922T020500Z--a7c9e1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-22T02:05:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Owner asked to create a ChatGPT Projects workspace for interview practice ahead of upcoming Senior Frontend interviews. Relevant interview/CV context loaded; preparing a structured project configuration and practice plan.",
+  "last_seen_at": "2026-09-22T02:05:00Z"
+}
