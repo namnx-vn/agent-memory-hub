@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260922T023400Z--9c7d31",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-22T02:34:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Interactive JavaScript learning session. Owner is asking about JavaScript single-threaded execution, event loop, call stack, microtask queue, macrotask queue, execution order, and output.",
+  "last_seen_at": "2026-09-22T02:34:00Z"
+}
