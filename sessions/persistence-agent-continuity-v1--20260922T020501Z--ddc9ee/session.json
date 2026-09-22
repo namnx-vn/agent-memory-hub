@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260922T020501Z--ddc9ee",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-22T02:05:01Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Owner requested daily curated Middle/Senior Frontend job opportunities in Hanoi onsite or remote, with moderate English requirements.",
+  "last_seen_at": "2026-09-22T02:05:01Z"
+}
