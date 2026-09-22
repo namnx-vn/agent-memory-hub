@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260922T022500Z--fe0922",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-22T02:25:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Started a Senior Frontend Interview Lab practice session. Goal: assess Middle/Middle+/Senior readiness using realistic frontend interview questions, one question at a time, with emphasis on reasoning, production trade-offs, debugging, system design, and communication.",
+  "last_seen_at": "2026-09-22T02:25:00Z"
+}
