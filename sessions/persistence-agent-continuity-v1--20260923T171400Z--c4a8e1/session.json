@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260923T171400Z--c4a8e1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-23T17:14:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Interactive session focused on Frontend interview preparation; current question asks for explanation of Micro-Frontend architecture and experience applying DevOps/DevSecOps in development workflows.",
+  "last_seen_at": "2026-09-23T17:14:00Z"
+}
