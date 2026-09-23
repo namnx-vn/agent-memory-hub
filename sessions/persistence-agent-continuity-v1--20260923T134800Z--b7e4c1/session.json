@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260923T134800Z--b7e4c1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-23T13:48:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Interactive session started. Current user question asks for the expansion and meaning of the software-security acronym VAPT, in the context of previously fixing VAPT findings.",
+  "last_seen_at": "2026-09-23T13:48:00Z"
+}
