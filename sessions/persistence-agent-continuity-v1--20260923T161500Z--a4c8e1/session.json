@@ -9,6 +9,6 @@
   "continued_from": [
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Interactive session started. Owner asks for a detailed TanStack Query (React Query) configuration guide and examples, with focus on practical React architecture, freshness policy, and production trade-offs.",
+  "summary": "Owner is learning TanStack Query in depth for Senior Frontend/architecture interview use. Current task covers production QueryClient configuration, query key design, staleTime vs gcTime, independent section fetching for Customer 360, background refetch UX, retries, cancellation, mutations/invalidation, dependent/parallel queries, and freshness policies for banking-style data.",
   "last_seen_at": "2026-09-23T16:15:00Z"
 }
