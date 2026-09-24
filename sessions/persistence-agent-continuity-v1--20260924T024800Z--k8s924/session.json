@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260924T024800Z--k8s924",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-24T02:48:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Interview-preparation session: explain Kubernetes/K8s deployment environment and how to answer the deployment question from the uploaded VietinBank interview notes.",
+  "last_seen_at": "2026-09-24T02:48:00Z"
+}
