@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260924T160500Z--c7e2a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-24T16:05:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Owner requested a detailed learning plan for Next.js, Zustand, and TanStack Query using DummyJSON, to be added to namnx-vn/crm-demo with AGENTS.md and README updates.",
+  "last_seen_at": "2026-09-24T16:05:00Z"
+}
