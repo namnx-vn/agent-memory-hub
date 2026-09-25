@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260925T042400Z--nxtq25",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-25T04:24:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Interactive learning session in the Next.js/Zustand/TanStack project. Current goal: explain Next.js routing principles clearly, building on the user's React background.",
+  "last_seen_at": "2026-09-25T04:24:00Z"
+}
