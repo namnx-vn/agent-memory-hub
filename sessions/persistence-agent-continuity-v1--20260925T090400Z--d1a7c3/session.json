@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260925T090400Z--d1a7c3",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "handoff",
+  "started_at": "2026-09-25T09:04:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Started Day 1 of the Next.js learning plan in namnx-vn/crm-demo. Created branch lesson/day-01-nextjs-foundation and PR #2. Added /dashboard, replaced the default home page with an App Router route playground, and expanded learning-plan/day-01-nextjs-foundation.md with exercises covering page.tsx, layout.tsx, nested routes, dynamic params, Link navigation, and Server Components by default. Existing /customers and /customers/[id] examples were reused. PR remains open for owner review/merge.",
+  "last_seen_at": "2026-09-25T09:07:00Z"
+}
