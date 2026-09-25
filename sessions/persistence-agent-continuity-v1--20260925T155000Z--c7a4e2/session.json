@@ -7,6 +7,6 @@
   "started_at": "2026-09-25T15:50:00Z",
   "parent_session_id": null,
   "continued_from": [],
-  "summary": "Continue owner's Next.js learning track. Prior project conversation covered App Router basics, page/layout, Server vs Client Components, dynamic routes, and server-side secret handling. Begin session 2 with the next practical topic.",
-  "last_seen_at": "2026-09-25T15:50:00Z"
+  "summary": "Session 2 focused on Next.js data fetching and TanStack Query. Owner correctly identified when to keep fetching in Server Components, how to isolate a small Client Component boundary for interactive balance refresh, and why TanStack Query helps with shared server-state cache, request deduplication, refetching, loading/error state, and synchronized updates across components using the same queryKey. crm-demo now includes Case 1 at /customers/[id] (server customer fetch + client balance demo), Case 2 at /customers/[id]/client-fetch (two client components sharing the same TanStack query), and Case 3 at /customers/[id]/hydration (server QueryClient prefetch/query + dehydrate + HydrationBoundary + client useQuery). Owner asked that future lessons include runnable code demos and that English answers be corrected at the end of assistant replies when applicable.",
+  "last_seen_at": "2026-09-25T17:09:00Z"
 }
