@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260925T155000Z--c7a4e2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-25T15:50:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Continue owner's Next.js learning track. Prior project conversation covered App Router basics, page/layout, Server vs Client Components, dynamic routes, and server-side secret handling. Begin session 2 with the next practical topic.",
+  "last_seen_at": "2026-09-25T15:50:00Z"
+}
