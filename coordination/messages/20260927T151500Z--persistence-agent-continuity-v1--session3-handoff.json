@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20260927T151500Z--persistence-agent-continuity-v1--session3-handoff",
+  "created_at": "2026-09-27T15:15:00Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20260926T153000Z--7b4e21"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "CRM learning Session 3 completed",
+  "body": "Session 3 (Zustand + state ownership) is complete. Working examples were committed to namnx-vn/crm-demo: useUiStore with persist/partialize, row-level narrow selector, BulkActionBar, CustomerTable integration, and expanded Day 6 notes. Continue with Session 4 end-to-end CRM integration; do not repeat Session 3 unless owner asks for review.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
