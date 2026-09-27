@@ -3,12 +3,12 @@
   "session_id": "persistence-agent-continuity-v1--20260926T153000Z--7b4e21",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "handoff",
   "started_at": "2026-09-26T15:30:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
   "continued_from": [
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Interactive learning continuation. Owner asked to continue Session 3 in the Next.js/Zustand/TanStack Query learning project. Immediate chat context shows Sessions 1-2 covered Next.js App Router/server-vs-client data fetching and TanStack Query caching, staleTime, optimistic updates, cancelQueries, rollback, and onSuccess/onSettled. Session 3 should continue with practical CRM-demo exercises, concise Vietnamese explanations, challenge questions, and TypeScript examples.",
-  "last_seen_at": "2026-09-26T15:30:00Z"
+  "summary": "Session 3 completed for the Next.js/Zustand/TanStack Query CRM learning track. Covered Zustand state ownership, create/state/actions, immutable updates, narrow selectors, row-level subscription behavior, array vs Set trade-offs, persist/partialize, and Next.js hydration concerns. Durable mental model: API/server state -> TanStack Query; local UI -> useState; shared client UI -> Zustand; shareable navigation state -> URL searchParams. Added working examples to namnx-vn/crm-demo: src/features/ui/useUiStore.ts, CustomerRow.tsx, BulkActionBar.tsx, integrated selection into CustomerTable.tsx, and expanded learning-plan/day-06-zustand.md. Next learning step is Session 4: end-to-end integration of Next.js + TanStack Query + Zustand in CRM.",
+  "last_seen_at": "2026-09-27T15:15:00Z"
 }
