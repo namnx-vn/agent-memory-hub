@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260928T135800Z--d91b7e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-28T13:58:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260928T035900Z--a83f2c",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260928T035900Z--a83f2c"
+  ],
+  "summary": "Interactive session. Owner requested a concise CV bullet rewrite to emphasize leading Frontend delivery within a 14-person Reem Bank project team.",
+  "last_seen_at": "2026-09-28T13:58:00Z"
+}
