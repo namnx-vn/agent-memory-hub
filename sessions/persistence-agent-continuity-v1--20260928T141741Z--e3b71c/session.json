@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260928T141741Z--e3b71c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-28T14:17:41Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260928T135800Z--d91b7e",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260928T135800Z--d91b7e"
+  ],
+  "summary": "Owner requested current React Frontend Developer opportunities in Hanoi; researching verified listings with fit for Middle/Senior banking frontend experience.",
+  "last_seen_at": "2026-09-28T14:17:41Z"
+}
