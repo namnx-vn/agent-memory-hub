@@ -3,12 +3,12 @@
   "session_id": "persistence-agent-continuity-v1--20260928T225022Z--a07d56",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-09-28T22:50:22.853Z",
   "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
   "continued_from": [
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Tailoring owner's frontend CV to an AI and banking web application role.",
-  "last_seen_at": "2026-09-28T22:50:22.853Z"
+  "summary": "Tailored the owner's Frontend CV to an AI/banking web-app JD. Produced a one-page PDF emphasizing React/TypeScript, UAE banking products, Reem Bank team leadership, Citi Bank SDK, reusable UI, performance, security, tests and CI/CD. Kept AI-agent SDLC experience distinct from unverified product LLM integrations; replaced the existing Library CV file.",
+  "last_seen_at": "2026-09-28T22:54:02.328Z"
 }
