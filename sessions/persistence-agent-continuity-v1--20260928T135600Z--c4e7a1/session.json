@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260928T135600Z--c4e7a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-28T13:56:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Interactive CV wording session. Owner is refining a Reem Bank leadership bullet; preserve verified scope: led 5-person Web & Mobile team and production delivery.",
+  "last_seen_at": "2026-09-28T13:56:00Z"
+}
