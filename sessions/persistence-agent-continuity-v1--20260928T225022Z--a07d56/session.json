@@ -9,6 +9,6 @@
   "continued_from": [
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Tailored the owner's Frontend CV to an AI/banking web-app JD. Produced a one-page PDF emphasizing React/TypeScript, UAE banking products, Reem Bank team leadership, Citi Bank SDK, reusable UI, performance, security, tests and CI/CD. Kept AI-agent SDLC experience distinct from unverified product LLM integrations; replaced the existing Library CV file.",
-  "last_seen_at": "2026-09-28T22:54:02.328Z"
+  "summary": "Created two distinct one-page CV versions for the owner: AI/banking frontend JD and ReactJS banking application JD. The second emphasizes React, REST, responsive UI, Ant Design, testing, CI/CD and banking production experience, without inventing GitLab or Zustand/Recoil experience. Both are saved as separate Library files.",
+  "last_seen_at": "2026-09-28T23:04:13.532Z"
 }
