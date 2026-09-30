@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-30T03:50:20Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Owner requested a high-earning Upwork freelancer comparable to their React/TypeScript frontend background and an adapted profile. Research and truthful profile drafting in progress; cloud Upwork access blocked.",
+  "last_seen_at": "2026-09-30T03:50:20Z"
+}
