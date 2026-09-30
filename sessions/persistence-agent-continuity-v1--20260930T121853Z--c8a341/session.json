@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T121853Z--c8a341",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-30T12:18:53.545Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner requested trimming excess bottom whitespace on page 2 and removing the TopCV footer from an attached CV PDF.",
+  "last_seen_at": "2026-09-30T12:18:53.545Z"
+}
