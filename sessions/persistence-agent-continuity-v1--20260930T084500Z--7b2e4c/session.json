@@ -10,6 +10,6 @@
     "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Loaded current continuity state and canonical shared user context. Owner asked for a consolidated summary of what is known about their professional profile, technical strengths, career direction, learning style, AI-engineering interests, and working preferences.",
+  "summary": "Loaded current continuity state, canonical shared user context, and recent Upwork handoff. Consolidated what is known about the owner: Senior Frontend/React/TypeScript profile with enterprise fintech production experience, five-person Reem Bank frontend/mobile lead context, Citi embedded SDK delivery, frontend architecture/MFE strengths, trajectory toward Lead/Staff/Architect and AI-assisted engineering supervision, preferred technical learning/review methods, Vietnamese-first communication, and current exploration of freelance/Upwork positioning. Historical or possibly outdated details remain marked as such.",
   "last_seen_at": "2026-09-30T08:45:00Z"
 }
