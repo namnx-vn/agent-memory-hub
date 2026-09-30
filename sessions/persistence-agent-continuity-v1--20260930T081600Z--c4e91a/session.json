@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T081600Z--c4e91a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-30T08:16:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Interactive owner session. Current task: analyze a frontend job description, infer expectations/seniority, and tailor interview/CV guidance to the owner's Senior Frontend background.",
+  "last_seen_at": "2026-09-30T08:16:00Z"
+}
