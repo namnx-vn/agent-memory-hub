@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T093600Z--9f2a7c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "handoff",
+  "started_at": "2026-09-30T09:36:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260930T035020Z--c4f19a"
+  ],
+  "summary": "User requested a Vietnamese application email for the Frontend Developer opening at Hanwha Tech shown in a recruiting post. Draft tailored to React-focused frontend experience, banking/fintech production delivery, Reem Bank frontend/team lead scope, and Citi embedded SDK work, without inventing unsupported metrics or skills.",
+  "last_seen_at": "2026-09-30T09:36:00Z"
+}
