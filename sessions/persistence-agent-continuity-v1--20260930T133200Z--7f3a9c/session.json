@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T133200Z--7f3a9c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-09-30T13:32:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "summary": "Planning an upgrade to React and Next.js review intelligence for namnx-vn/ai-reviewer-widget based on the current repository architecture and current framework capabilities.",
+  "last_seen_at": "2026-09-30T13:32:00Z"
+}
