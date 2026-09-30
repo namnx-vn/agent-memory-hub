@@ -3,12 +3,12 @@
   "session_id": "persistence-agent-continuity-v1--20260930T134700Z--7c3e91",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "handoff",
   "started_at": "2026-09-30T13:47:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
   "continued_from": [
     "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
   ],
-  "summary": "Owner asked to analyze session-2 materials in namnx-vn/english-kyna and create a practical note.md for today's English class preparation.",
-  "last_seen_at": "2026-09-30T13:47:00Z"
+  "summary": "Analyzed namnx-vn/english-kyna Session-2 structure, resolved today's exact lesson from the owner's calendar as Duo - Business English - Beginner 1, LC1 (2) 'How many people are there in your family?', cross-checked the Beginner 1 curriculum, and created Session-2/note.md with vocabulary, core grammar, look-like vs be-like distinction, fill-in personal answers, mini-dialogues, common mistakes, rapid speaking drills, interview/small-talk bridge, and a 15-minute pre-class preparation plan. english-kyna commit: 7d5cbd5190a4e6906d3995e95bbedad00ddb24c7.",
+  "last_seen_at": "2026-09-30T14:02:00Z"
 }
