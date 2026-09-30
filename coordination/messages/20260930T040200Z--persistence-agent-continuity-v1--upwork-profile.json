@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20260930T040200Z--persistence-agent-continuity-v1--upwork-profile",
+  "created_at": "2026-09-30T03:54:50.880Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "Upwork profile drafted; live editing blocked",
+  "body": "See sessions/persistence-agent-continuity-v1--20260930T035020Z--c4f19a/session.json. English frontend/fintech profile prepared from latest CV, inspired by high-earning React freelancers. No Upwork changes saved; cloud site access blocked. Future refinement can use owner-provided current title/overview. Do not imply copied earnings, badges, backend expertise or performance metrics.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
