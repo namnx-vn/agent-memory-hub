@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T024357Z--88bf5f",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "handoff",
+  "started_at": "2026-09-30T02:43:57.725Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner requested adding Kyna English lessons to Google Calendar. Calendar access verified. Kyna sign-in reported incorrect login information/password. No calendar events created. Continue after successful authentication; read lesson dates/times and check calendar for duplicates.",
+  "last_seen_at": "2026-09-30T02:43:57.725Z"
+}
