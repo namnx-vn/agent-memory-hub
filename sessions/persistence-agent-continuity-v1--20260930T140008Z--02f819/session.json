@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20260930T140008Z--02f819",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-09-30T14:00:08.937Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Completed a standalone request for images of a mysterious place; selected Stonehenge and sourced brief context from English Heritage. No ongoing task or handoff.",
+  "last_seen_at": "2026-09-30T14:00:08.937Z"
+}
