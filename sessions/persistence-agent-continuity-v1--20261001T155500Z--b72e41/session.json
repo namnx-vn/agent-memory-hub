@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T155500Z--b72e41",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T15:55:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260930T035020Z--c4f19a"
+  ],
+  "summary": "Owner requested changing session persistence so chats that belong to a project are stored under a project tree, while non-project chats continue using the existing flat sessions/<session-id>/session.json layout. Inspecting repository conventions and validator impact before updating the storage contract.",
+  "last_seen_at": "2026-10-01T15:55:00Z"
+}
