@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T072200Z--6f91c2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T07:22:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner requested a GPBank-targeted Frontend mock interview based on a React/Next.js JD and HR hints emphasizing Micro-Frontend, microservices integration, high-load, ELK/logging, and Kubernetes. Use real banking/fintech production experience only and assess Middle/Middle+/Senior depth.",
+  "last_seen_at": "2026-10-01T07:22:00Z"
+}
