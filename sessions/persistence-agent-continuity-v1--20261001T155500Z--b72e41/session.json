@@ -3,12 +3,14 @@
   "session_id": "persistence-agent-continuity-v1--20261001T155500Z--b72e41",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "handoff",
   "started_at": "2026-10-01T15:55:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
   "continued_from": [
     "persistence-agent-continuity-v1--20260930T035020Z--c4f19a"
   ],
-  "summary": "Owner requested changing session persistence so chats that belong to a project are stored under a project tree, while non-project chats continue using the existing flat sessions/<session-id>/session.json layout. Inspecting repository conventions and validator impact before updating the storage contract.",
-  "last_seen_at": "2026-10-01T15:55:00Z"
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Implemented and merged project-aware session storage via PR #2. Chats with explicit trusted project scope now route to projects/<project-id>/sessions/<session-id>/session.json with scope=project/project_id metadata; chats without reliable project scope keep the existing sessions/<session-id>/session.json layout. Updated ChatGPT global/project bootstrap docs, AGENTS, SESSION_LINKING, MULTI_AGENT, discovery/runtime metadata, schema, README/llms, and validators. Both GitHub validation workflows passed before merge. Existing sessions require no migration. Important operational note: the owner's currently pasted ChatGPT Custom Instructions still contain the old hard-coded standalone path and must be replaced with the updated CHATGPT_GLOBAL_BOOTSTRAP.md text for global behavior to follow the new routing; each ChatGPT Project should use CHATGPT_PROJECT_INSTRUCTIONS.md with a unique stable PROJECT_ID.",
+  "last_seen_at": "2026-10-01T16:06:00Z"
 }
