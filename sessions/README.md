@@ -1,9 +1,13 @@
 # Sessions
 
-Each participating chat/model invocation may create one directory:
+This directory keeps the existing storage layout for chats/invocations that are not scoped to a project:
 
 `sessions/<session-id>/session.json`
 
-See `SESSION_LINKING.md` for schema and lifecycle.
+Project-scoped chats are stored separately under:
 
-This directory is a durable graph of operational session summaries and links, not a transcript archive and not a store for hidden chain-of-thought.
+`projects/<project-id>/sessions/<session-id>/session.json`
+
+See `SESSION_LINKING.md` for routing, schema, linking, and lifecycle rules.
+
+Both trees are part of the same durable session graph. They store operational summaries and links, not transcript archives or hidden chain-of-thought.
