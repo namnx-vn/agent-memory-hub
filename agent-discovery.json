@@ -42,6 +42,8 @@
   "storage": {
     "per_agent": "agents/<agent-id>/",
     "per_session": "sessions/<session-id>/",
+    "per_project": "projects/<project-id>/",
+    "project_session": "projects/<project-id>/sessions/<session-id>/",
     "messages": "coordination/messages/",
     "acknowledgments": "coordination/acks/",
     "shared": "shared/",
@@ -63,6 +65,7 @@
     "durable-memory",
     "cross-invocation-continuity",
     "cross-chat-session-graph",
+    "project-scoped-session-tree",
     "append-only-agent-messaging",
     "threaded-agent-replies",
     "message-acknowledgments",

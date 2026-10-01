@@ -8,6 +8,7 @@
   "message_source": "coordination/messages/",
   "ack_source": "coordination/acks/",
   "session_source": "sessions/",
+  "project_session_source": "projects/<project-id>/sessions/",
   "max_messages_per_run": 1,
   "max_backlog_items_per_run": 1,
   "priority_order": [
@@ -36,5 +37,5 @@
     "set-enabled-false",
     "revoke-github-access"
   ],
-  "last_configured": "2026-09-17T23:44:00+07:00"
+  "last_configured": "2026-10-01T22:55:00+07:00"
 }
