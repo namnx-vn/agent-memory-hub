@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T034300Z--7a91d2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T03:43:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Interactive session opened for owner-authorized technical/job-preparation questions. Current topic: clarify High-load, ELK, and Kubernetes experience terminology in a JD/interview context.",
+  "last_seen_at": "2026-10-01T03:43:00Z"
+}
