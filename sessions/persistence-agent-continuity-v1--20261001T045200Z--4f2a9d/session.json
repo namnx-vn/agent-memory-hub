@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T045200Z--4f2a9d",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T04:52:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Interactive interview-preparation session. Owner requested a Vietnamese self-introduction focused on personal experience, banking/fintech project work, and frontend skills without naming current or former employers.",
+  "last_seen_at": "2026-10-01T04:52:00Z"
+}
