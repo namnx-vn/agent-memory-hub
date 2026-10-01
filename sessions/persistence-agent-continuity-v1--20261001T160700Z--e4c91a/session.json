@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T160700Z--e4c91a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T16:07:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "User defined a reusable English speaking-reflex practice protocol: user provides scenario, level, difficulty, and style; practice starts after user says Hello in Voice; alternate English turns; if user asks What should I say next?, give short natural prompts; when user says End this session, stop and give feedback on fluency, word choice, grammar, and naturalness. Prefer short, native-like, non-textbook phrasing.",
+  "last_seen_at": "2026-10-01T16:07:00Z"
+}
