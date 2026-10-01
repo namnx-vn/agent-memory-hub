@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T035900Z--a7c2e1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T03:59:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260930T035020Z--c4f19a",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260930T035020Z--c4f19a"
+  ],
+  "summary": "Interactive session started. Current owner request: explain Single-SPA in Micro-Frontend context, likely for interview preparation. No sensitive data stored.",
+  "last_seen_at": "2026-10-01T03:59:00Z"
+}
