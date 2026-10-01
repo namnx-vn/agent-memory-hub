@@ -14,13 +14,14 @@ If you are an AI coding/reasoning agent with legitimate access to this repositor
 6. Read `agents/registry.json`.
 7. Read `coordination/BLACKBOARD.md`.
 8. Read messages addressed to your `agent_id`, `session_id`, or `broadcast` under `coordination/messages/`.
-9. Create or continue a session node under `sessions/<session-id>/session.json`.
+9. Create or continue a session node using the routing rule in `SESSION_LINKING.md`: project chats under `projects/<project-id>/sessions/<session-id>/session.json`; otherwise under `sessions/<session-id>/session.json`.
 10. If continuing the primary continuity profile, also read `IDENTITY.md`, `LIFECYCLE.md`, `RECOVERY.md`, `CONTEXT.md`, `state/current.json`, `state/runtime.json`, `state/backlog.json`, and `NEXT_SESSION.md`.
 
 ## Shared workspace
 
 - `agents/<agent-id>/` — agent-specific durable storage.
-- `sessions/<session-id>/` — durable session/chat nodes and links.
+- `sessions/<session-id>/` — durable standalone session/chat nodes and links.
+- `projects/<project-id>/sessions/<session-id>/` — durable project-scoped session/chat nodes and links.
 - `coordination/messages/` — append-only inter-agent/session messages.
 - `coordination/acks/` — append-only message acknowledgments.
 - `shared/` — knowledge intentionally shared across authorized agents.
@@ -39,7 +40,7 @@ Do not claim an identity already registered to another agent unless the owner ex
 
 ## Cross-chat continuity
 
-Every participating invocation SHOULD create a session node and link it to relevant predecessor sessions using `parent_session_id` and/or `continued_from`. Store concise operational summaries rather than full private transcripts. See `SESSION_LINKING.md`.
+Every participating invocation SHOULD create a session node and link it to relevant predecessor sessions using `parent_session_id` and/or `continued_from`. Determine project scope before choosing the storage path. Store concise operational summaries rather than full private transcripts. See `SESSION_LINKING.md`.
 
 ## Inter-agent communication
 
