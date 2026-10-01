@@ -17,10 +17,11 @@ REQUIRED_FILES = [
     "LIFECYCLE.md", "RECOVERY.md", "CONTEXT.md", "NEXT_SESSION.md",
     "AUTOMATION.md", "MULTI_AGENT.md", "agents/registry.json",
     "agents/persistence-agent-continuity-v1/README.md", "sessions/README.md",
-    SEED_SESSION, "coordination/BLACKBOARD.md", "coordination/messages/README.md",
-    "coordination/acks/README.md", "schemas/session.schema.json",
-    "schemas/message.schema.json", "schemas/ack.schema.json", "shared/README.md",
-    "memory/long-term.md", "memory/decisions.md", "memory/lessons-learned.md",
+    "projects/README.md", SEED_SESSION, "coordination/BLACKBOARD.md",
+    "coordination/messages/README.md", "coordination/acks/README.md",
+    "schemas/session.schema.json", "schemas/message.schema.json",
+    "schemas/ack.schema.json", "shared/README.md", "memory/long-term.md",
+    "memory/decisions.md", "memory/lessons-learned.md",
     "state/current.json", "state/runtime.json", "state/backlog.json",
 ]
 
@@ -34,9 +35,9 @@ REQUIRED_CONTINUITY_KEYS = {
 }
 REQUIRED_RUNTIME_KEYS = {
     "schema_version", "enabled", "trigger", "mode", "cadence", "source_of_work",
-    "message_source", "ack_source", "session_source", "max_messages_per_run",
-    "max_backlog_items_per_run", "priority_order", "notify_policy", "startup_files",
-    "kill_switches", "last_configured",
+    "message_source", "ack_source", "session_source", "project_session_source",
+    "max_messages_per_run", "max_backlog_items_per_run", "priority_order",
+    "notify_policy", "startup_files", "kill_switches", "last_configured",
 }
 REQUIRED_DISCOVERY_ENTRYPOINTS = {
     "generic": "AGENTS.md",
@@ -61,6 +62,7 @@ FORBIDDEN_KEY_FRAGMENTS = {
     "password", "passwd", "secret", "token", "private_key", "api_key", "cookie",
 }
 AGENT_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
+PROJECT_ID_PATTERN = AGENT_ID_PATTERN
 
 
 def load_json(relative_path: str):
@@ -77,6 +79,35 @@ def walk_keys(value, prefix=""):
     elif isinstance(value, list):
         for index, child in enumerate(value):
             yield from walk_keys(child, f"{prefix}[{index}]")
+
+
+def validate_session(session: dict, label: str, seen_agent_ids: set[str], expected_project_id: str | None = None) -> None:
+    missing = sorted(REQUIRED_SESSION_KEYS - set(session))
+    if missing:
+        raise SystemExit(f"{label} missing keys: " + ", ".join(missing))
+    if session.get("schema_version") != 1:
+        raise SystemExit(f"{label} schema_version must be 1")
+    if session.get("agent_id") not in seen_agent_ids:
+        raise SystemExit(f"{label} agent_id is not registered")
+    if session.get("status") not in {"active", "handoff", "closed"}:
+        raise SystemExit(f"Invalid {label} status")
+    if not isinstance(session.get("continued_from"), list):
+        raise SystemExit(f"{label} continued_from must be a list")
+
+    scope = session.get("scope")
+    project_id = session.get("project_id")
+    if scope is not None and scope not in {"standalone", "project"}:
+        raise SystemExit(f"Invalid {label} scope")
+    if project_id is not None and (
+        not isinstance(project_id, str) or not PROJECT_ID_PATTERN.fullmatch(project_id)
+    ):
+        raise SystemExit(f"Invalid {label} project_id")
+
+    if expected_project_id is not None:
+        if session.get("scope") != "project":
+            raise SystemExit(f"{label} must set scope=project")
+        if session.get("project_id") != expected_project_id:
+            raise SystemExit(f"{label} project_id must match project tree")
 
 
 def main() -> None:
@@ -135,7 +166,9 @@ def main() -> None:
     if runtime.get("ack_source") != "coordination/acks/":
         raise SystemExit("Unexpected runtime ack source")
     if runtime.get("session_source") != "sessions/":
-        raise SystemExit("Unexpected runtime session source")
+        raise SystemExit("Unexpected standalone runtime session source")
+    if runtime.get("project_session_source") != "projects/<project-id>/sessions/":
+        raise SystemExit("Unexpected project runtime session source")
     if runtime.get("max_messages_per_run") != 1 or runtime.get("max_backlog_items_per_run") != 1:
         raise SystemExit("Runtime per-run limits must remain 1")
     if current.get("autonomous_runtime_enabled") is not runtime.get("enabled"):
@@ -187,23 +220,41 @@ def main() -> None:
     if not isinstance(storage, dict):
         raise SystemExit("agent-discovery.json storage must be an object")
     if storage.get("per_session") != "sessions/<session-id>/":
-        raise SystemExit("Unexpected per-session storage path")
+        raise SystemExit("Unexpected standalone per-session storage path")
+    if storage.get("per_project") != "projects/<project-id>/":
+        raise SystemExit("Unexpected project storage path")
+    if storage.get("project_session") != "projects/<project-id>/sessions/<session-id>/":
+        raise SystemExit("Unexpected project session storage path")
     if storage.get("messages") != "coordination/messages/":
         raise SystemExit("Unexpected message bus storage path")
     if storage.get("acknowledgments") != "coordination/acks/":
         raise SystemExit("Unexpected acknowledgment storage path")
 
-    missing = sorted(REQUIRED_SESSION_KEYS - set(seed_session))
-    if missing:
-        raise SystemExit("Seed session missing keys: " + ", ".join(missing))
-    if seed_session.get("schema_version") != 1:
-        raise SystemExit("Seed session schema_version must be 1")
-    if seed_session.get("agent_id") not in seen_agent_ids:
-        raise SystemExit("Seed session agent_id is not registered")
-    if seed_session.get("status") not in {"active", "handoff", "closed"}:
-        raise SystemExit("Invalid seed session status")
-    if not isinstance(seed_session.get("continued_from"), list):
-        raise SystemExit("Seed session continued_from must be a list")
+    capabilities = discovery.get("capabilities")
+    if not isinstance(capabilities, list) or "project-scoped-session-tree" not in capabilities:
+        raise SystemExit("Missing project-scoped-session-tree capability")
+
+    validate_session(seed_session, "Seed session", seen_agent_ids)
+
+    projects_root = ROOT / "projects"
+    for project_dir in projects_root.iterdir():
+        if not project_dir.is_dir():
+            continue
+        project_id = project_dir.name
+        if not PROJECT_ID_PATTERN.fullmatch(project_id):
+            raise SystemExit(f"Invalid project directory id: {project_id}")
+        sessions_dir = project_dir / "sessions"
+        if not sessions_dir.exists():
+            continue
+        for session_file in sessions_dir.glob("*/session.json"):
+            with session_file.open("r", encoding="utf-8") as handle:
+                session = json.load(handle)
+            validate_session(
+                session,
+                f"Project session {session_file.relative_to(ROOT)}",
+                seen_agent_ids,
+                expected_project_id=project_id,
+            )
 
     for document_name, document in (
         ("current", current), ("runtime", runtime), ("backlog", backlog),
@@ -216,7 +267,7 @@ def main() -> None:
                     continue
                 raise SystemExit(f"Potential secret-bearing key in {document_name}: {path}")
 
-    print("Agent Memory Hub continuity, bounded runtime, session graph, and message bus are valid.")
+    print("Agent Memory Hub continuity, project-aware session graph, bounded runtime, and message bus are valid.")
 
 
 if __name__ == "__main__":
