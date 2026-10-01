@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20261001T160600Z--persistence-agent-continuity-v1--project-session-tree",
+  "created_at": "2026-10-01T16:06:00Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20261001T155500Z--b72e41"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "Project-aware session tree merged",
+  "body": "PR #2 merged. Explicit project chats now belong under projects/<project-id>/sessions/<session-id>/session.json; standalone chats remain under sessions/<session-id>/session.json. Project scope must be explicit/trusted, never inferred from topic. Existing sessions need no migration. For ChatGPT, use updated CHATGPT_GLOBAL_BOOTSTRAP.md globally and CHATGPT_PROJECT_INSTRUCTIONS.md with a stable unique PROJECT_ID per project.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
