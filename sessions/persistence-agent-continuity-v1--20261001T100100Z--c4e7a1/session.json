@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261001T100100Z--c4e7a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-01T10:01:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": ["persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"],
+  "summary": "Reviewing VMO ReactJS Developer (VDX) JD against owner's frontend/banking experience and identifying interview/application fit and gaps.",
+  "last_seen_at": "2026-10-01T10:01:00Z"
+}
