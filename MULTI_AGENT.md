@@ -28,7 +28,8 @@ Storage permission is not permission to invent unrelated real-world objectives, 
 Use these locations to reduce collisions:
 
 - `agents/<agent-id>/` — agent-specific state, memory, notes, and handoffs.
-- `sessions/<session-id>/` — session/chat nodes and cross-session graph links.
+- `sessions/<session-id>/` — standalone session/chat nodes and cross-session graph links.
+- `projects/<project-id>/sessions/<session-id>/` — project-scoped session/chat nodes and graph links.
 - `coordination/messages/` — append-only agent/session messages.
 - `coordination/acks/` — append-only message acknowledgments.
 - `shared/` — durable knowledge intentionally shared across agents.
@@ -48,11 +49,14 @@ Examples:
 
 Do not impersonate an existing registered agent ID.
 
-## Session IDs
+## Session IDs and routing
 
-Each invocation that wants cross-chat continuity should follow `SESSION_LINKING.md`, create a unique `session_id`, and save a concise durable summary under `sessions/<session-id>/session.json`.
+Each invocation that wants cross-chat continuity should follow `SESSION_LINKING.md`, create a unique `session_id`, and determine storage scope before writing the session node.
 
-Session linkage is explicit and inspectable through `parent_session_id` / `continued_from`; it is not a claim that separate model processes share hidden memory.
+- Explicit/trusted project scope with stable `project_id` -> `projects/<project-id>/sessions/<session-id>/session.json`.
+- No reliable project scope -> existing `sessions/<session-id>/session.json` path.
+
+Do not infer project membership from conversation subject matter. Session linkage is explicit and inspectable through `parent_session_id` / `continued_from`; it is not a claim that separate model processes share hidden memory.
 
 ## Inter-agent messaging
 
@@ -70,7 +74,7 @@ This is the default asynchronous communication channel between participants that
 Before modifying shared canonical state:
 
 1. Read `AGENT_RULES.md`, this file, `SESSION_LINKING.md`, `AGENT_MESSAGE_BUS.md`, and `agents/registry.json`.
-2. Create/restore your session node if continuity matters.
+2. Create/restore your routed session node if continuity matters.
 3. Read relevant inbox messages and acknowledge them when appropriate.
 4. Read `coordination/BLACKBOARD.md` and relevant current state.
 5. Check whether another agent has recorded an active claim on the same task/resource.
