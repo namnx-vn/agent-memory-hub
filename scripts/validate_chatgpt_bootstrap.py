@@ -12,6 +12,7 @@ REQUIRED = {
     "SESSION_LINKING.md",
     "AGENT_MESSAGE_BUS.md",
     "agent-discovery.json",
+    "projects/README.md",
 }
 
 EXPECTED_ENTRYPOINTS = {
@@ -48,13 +49,22 @@ def main() -> None:
     for capability in (
         "global-chat-bootstrap-via-custom-instructions",
         "project-chat-bootstrap-via-project-instructions",
+        "project-scoped-session-tree",
         "cross-chat-session-graph",
         "append-only-agent-messaging",
     ):
         if capability not in capabilities:
             raise SystemExit(f"Missing capability: {capability}")
 
-    print("ChatGPT global/project bootstrap configuration is valid.")
+    storage = discovery.get("storage")
+    if not isinstance(storage, dict):
+        raise SystemExit("Discovery storage must be an object")
+    if storage.get("per_session") != "sessions/<session-id>/":
+        raise SystemExit("Unexpected standalone session path")
+    if storage.get("project_session") != "projects/<project-id>/sessions/<session-id>/":
+        raise SystemExit("Unexpected project session path")
+
+    print("ChatGPT global/project bootstrap configuration is project-aware and valid.")
 
 
 if __name__ == "__main__":
