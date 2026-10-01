@@ -15,6 +15,11 @@
     "parent_session_id": {"type": ["string", "null"]},
     "continued_from": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "summary": {"type": "string"},
-    "last_seen_at": {"type": "string"}
+    "last_seen_at": {"type": "string"},
+    "scope": {"enum": ["standalone", "project"]},
+    "project_id": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    }
   }
 }
