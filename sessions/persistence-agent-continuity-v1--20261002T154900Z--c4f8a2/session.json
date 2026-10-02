@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261002T154900Z--c4f8a2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-02T15:49:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Owner requested a professional 2.5D funny animation concept broken into 8-second scenes, with per-scene dialogue, voice direction, character-generation prompts, image/background prompts, camera direction, and motion prompts.",
+  "last_seen_at": "2026-10-02T15:49:00Z"
+}
