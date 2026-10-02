@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261002T133400Z--4f9a2c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-02T13:34:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Preparing a session-3 English study note from namnx-vn/english-kyna for the owner's lesson today; will include vocabulary, useful phrases, sentence structures, and speaking preparation.",
+  "last_seen_at": "2026-10-02T13:34:00Z"
+}
