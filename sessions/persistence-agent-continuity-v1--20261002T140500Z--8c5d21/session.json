@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261002T140500Z--8c5d21",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-02T14:05:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260930T134700Z--7c3e91",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260930T134700Z--7c3e91"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Preparing Session-3 English study notes from namnx-vn/english-kyna, continuing the Session-2 study-note workflow.",
+  "last_seen_at": "2026-10-02T14:05:00Z"
+}
