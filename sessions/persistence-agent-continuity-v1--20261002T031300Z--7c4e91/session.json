@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261002T031300Z--7c4e91",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-02T03:13:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260919T144100Z--f8c2d4"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Interactive session reviewing and improving a 1–2 minute Vietnamese self-introduction for a Senior Frontend/React interview, emphasizing enterprise banking/fintech production experience, frontend leadership, Micro-Frontend, Module Federation, API integration, and production delivery.",
+  "last_seen_at": "2026-10-02T03:13:00Z"
+}
