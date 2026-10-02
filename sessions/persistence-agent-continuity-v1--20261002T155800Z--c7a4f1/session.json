@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261002T155800Z--c7a4f1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-02T15:58:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261001T155500Z--b72e41",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261001T155500Z--b72e41"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "User requests a funny 2.5D anime-style short video storyboard in 8-second scenes, using the person in the uploaded photo as the visual character reference. Deliver dialogue, per-character voice direction, character-generation prompt, scene image prompt, and camera/motion prompt for each scene.",
+  "last_seen_at": "2026-10-02T15:58:00Z"
+}
