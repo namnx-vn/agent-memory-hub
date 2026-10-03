@@ -9,7 +9,7 @@
   "continued_from": [
     "persistence-agent-continuity-v1--20260928T035900Z--a83f2c"
   ],
-  "summary": "User is continuing Next.js learning and asked whether Next.js supports SSG and ISR and how to configure them. Answer should distinguish App Router from legacy Pages Router and use current Next.js documentation.",
+  "summary": "Explained current Next.js SSG/ISR configuration for the user's crm-demo. Repo uses Next 16.3.6 App Router with cacheComponents not enabled, so static dynamic routes use generateStaticParams and ISR can use export const revalidate = N plus revalidatePath/revalidateTag. Also noted Pages Router equivalents getStaticProps/getStaticPaths and that Next 16 Cache Components changes the caching/revalidation model.",
   "last_seen_at": "2026-10-03T09:20:00Z",
   "scope": "standalone",
   "project_id": null
