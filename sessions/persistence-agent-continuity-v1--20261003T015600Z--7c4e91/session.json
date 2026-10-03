@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261003T015600Z--7c4e91",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-03T01:56:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Interactive standalone chat. Current task: help the owner phrase a JavaScript event-loop explanation in natural spoken Vietnamese for interview practice.",
+  "last_seen_at": "2026-10-03T01:56:00Z",
+  "scope": "standalone",
+  "project_id": null
+}
