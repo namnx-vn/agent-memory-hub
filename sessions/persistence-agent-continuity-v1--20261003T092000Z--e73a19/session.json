@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261003T092000Z--e73a19",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-03T09:20:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20260928T035900Z--a83f2c",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20260928T035900Z--a83f2c"
+  ],
+  "summary": "User is continuing Next.js learning and asked whether Next.js supports SSG and ISR and how to configure them. Answer should distinguish App Router from legacy Pages Router and use current Next.js documentation.",
+  "last_seen_at": "2026-10-03T09:20:00Z",
+  "scope": "standalone",
+  "project_id": null
+}
