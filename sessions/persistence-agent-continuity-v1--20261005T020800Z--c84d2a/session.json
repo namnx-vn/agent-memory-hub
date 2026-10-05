@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261005T020800Z--c84d2a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-05T02:08:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner asked to analyze a React.js frontend JD and tailor the uploaded CV to emphasize the strongest matching experience without overstating unsupported skills.",
+  "last_seen_at": "2026-10-05T02:08:00Z",
+  "scope": "standalone",
+  "project_id": null
+}
