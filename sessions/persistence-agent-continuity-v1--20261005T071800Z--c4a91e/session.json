@@ -3,12 +3,12 @@
   "session_id": "persistence-agent-continuity-v1--20261005T071800Z--c4a91e",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-10-05T07:18:00Z",
   "parent_session_id": null,
   "continued_from": [],
   "scope": "standalone",
   "project_id": null,
-  "summary": "Owner asked to fill missing fields in an uploaded frontend job application spreadsheet using only information supported by the uploaded CV.",
-  "last_seen_at": "2026-10-05T07:18:00Z"
+  "summary": "Completed the owner's frontend job application form from the uploaded CV without inventing unsupported details. Added CV-supported email, certification, technical skills/specializations, employment achievements/locations, related experience and strengths; aligned Appro end month from 07/2026 to the CV's 09/2026. Left unsupported fields such as weaknesses, MBS motivation and references unchanged. Because the source was legacy .xls, produced a reconstructed and visually validated .xlsx at /mnt/data/Don-ung-tuyen-Frontend-ReacJS-NGUYEN-XUAN-NAM-filled.xlsx.",
+  "last_seen_at": "2026-10-05T07:35:00Z"
 }
