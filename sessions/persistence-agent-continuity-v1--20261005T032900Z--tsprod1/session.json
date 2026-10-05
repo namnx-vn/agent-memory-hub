@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261005T032900Z--tsprod1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-05T03:29:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261001T155500Z--b72e41",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261001T155500Z--b72e41"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Interactive owner session focused on TypeScript production interview preparation: discriminated unions, exhaustive checks, generics, and API/library typing.",
+  "last_seen_at": "2026-10-05T03:29:00Z"
+}
