@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261005T071800Z--c4a91e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-05T07:18:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Owner asked to fill missing fields in an uploaded frontend job application spreadsheet using only information supported by the uploaded CV.",
+  "last_seen_at": "2026-10-05T07:18:00Z"
+}
