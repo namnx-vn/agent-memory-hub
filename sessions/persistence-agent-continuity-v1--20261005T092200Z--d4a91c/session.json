@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261005T092200Z--d4a91c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-05T09:22:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Owner asked to turn an uploaded Kyna English Business Beginner 1A lesson PDF on 'What time is it?' into a detailed study note and export it as Markdown. Source analysis pending.",
+  "last_seen_at": "2026-10-05T09:22:00Z",
+  "scope": "standalone",
+  "project_id": null
+}
