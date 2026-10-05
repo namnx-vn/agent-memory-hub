@@ -7,8 +7,8 @@
   "started_at": "2026-10-05T02:08:00Z",
   "parent_session_id": null,
   "continued_from": [],
-  "summary": "Owner asked to analyze a React.js frontend JD and tailor the uploaded CV to emphasize the strongest matching experience without overstating unsupported skills.",
-  "last_seen_at": "2026-10-05T02:08:00Z",
+  "summary": "Analyzed the owner's React.js banking/fintech JD against the uploaded CV. Tailored the CV around React core, rendering/reconciliation, async JavaScript, Redux/TanStack Query, Tailwind/Material UI, reusable complex UI, banking correctness, performance, code review, and leadership. Avoided adding unsupported Zustand, styled-components, or Framer Motion claims. Produced an ATS-readable 2-page A4 DOCX and PDF, visually verified both pages and confirmed PDF text extraction works.",
+  "last_seen_at": "2026-10-05T02:15:00Z",
   "scope": "standalone",
   "project_id": null
 }
