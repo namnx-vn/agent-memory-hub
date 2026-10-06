@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261006T074800Z--c4e9a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-06T07:48:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Interactive standalone session. User is discussing single-spa configuration for frontend micro-frontend/interview preparation.",
+  "last_seen_at": "2026-10-06T07:48:00Z"
+}
