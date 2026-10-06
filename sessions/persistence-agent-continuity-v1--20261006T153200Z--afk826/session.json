@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261006T153200Z--afk826",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-06T15:32:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Standalone chat. Current task: find the newest AFK Arena gift codes and verify current validity from recent public sources.",
+  "last_seen_at": "2026-10-06T15:32:00Z",
+  "scope": "standalone",
+  "project_id": null
+}
