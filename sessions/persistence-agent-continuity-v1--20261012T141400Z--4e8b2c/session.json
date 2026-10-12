@@ -3,7 +3,7 @@
   "session_id": "persistence-agent-continuity-v1--20261012T141400Z--4e8b2c",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-10-12T14:14:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20261005T092200Z--d4a91c",
   "continued_from": [
@@ -12,6 +12,6 @@
   ],
   "scope": "standalone",
   "project_id": null,
-  "summary": "Preparing a comprehensive Vietnamese pre-class note from the user's attached 12-page Kyna Business English Beginner 1A 'Where do you work? Part 1' PDF, with source-based exercises and clearly marked additional beginner speaking drills.",
-  "last_seen_at": "2026-10-12T14:14:00Z"
+  "summary": "Reviewed the owner's 12-page Kyna Business English Beginner 1A 'Where do you work? Part 1' PDF. Delivered a comprehensive Vietnamese pre-class Markdown note: 10 workplace terms, occupations, at/in/on/for/from, do/does & work/works, slide 3/4/6/7 answers, context-inferred (unverified) slide 8 listening answers, slide 9 role-play, frontend-developer self-introduction, 8 dialogue scenarios, 3 short stories, drills, answer keys, pronunciation, cheat sheet, and 30-minute prep plan. Local artifact: /mnt/data/kyna_beginner_1a_where_do_you_work_part1_preclass.md.",
+  "last_seen_at": "2026-10-12T14:22:00Z"
 }
