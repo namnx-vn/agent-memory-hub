@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261012T141400Z--4e8b2c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-12T14:14:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261005T092200Z--d4a91c",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261005T092200Z--d4a91c",
+    "persistence-agent-continuity-v1--20261005T092300Z--b7e4c1"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Preparing a comprehensive Vietnamese pre-class note from the user's attached 12-page Kyna Business English Beginner 1A 'Where do you work? Part 1' PDF, with source-based exercises and clearly marked additional beginner speaking drills.",
+  "last_seen_at": "2026-10-12T14:14:00Z"
+}
