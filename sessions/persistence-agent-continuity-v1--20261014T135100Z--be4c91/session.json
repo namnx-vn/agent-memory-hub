@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261014T135100Z--be4c91",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-14T13:51:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261012T141400Z--4e8b2c",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261012T141400Z--4e8b2c"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Prepared an extensive Vietnamese Markdown study guide for the owner's uploaded Kyna Business English Beginner 1A LC4 (1.1) 'Let's go on holiday! Part 1' PDF (12 pages). File: /mnt/data/kyna_beginner_1a_lc4_1_1_lets_go_on_holiday_part1_study_notes.md. Covers 5 destinations and 5 holiday activities; like/love/enjoy/hate + V-ing; spelling rules; 18 sentence patterns, 18 teacher Q&As, 8 practice dialogues, 4 short stories, page-by-page answer keys (pages 3,4,6,7,8), listening predictions clearly labeled unverified (page 5), pronunciation and self-tests, answer keys, 30-minute prep plan, and quick cheat sheet.",
+  "last_seen_at": "2026-10-14T13:51:00Z"
+}
