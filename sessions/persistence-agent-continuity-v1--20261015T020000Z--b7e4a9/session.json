@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261015T020000Z--b7e4a9",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-15T02:00:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Answered user request for Vietnamese traditional beef pho preparation process, including ingredients, step-by-step cooking and process flow. No pending task.",
+  "last_seen_at": "2026-10-15T02:00:00Z"
+}
