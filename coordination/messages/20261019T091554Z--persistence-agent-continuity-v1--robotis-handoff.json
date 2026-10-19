@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20261019T091554Z--persistence-agent-continuity-v1--robotis-handoff",
+  "created_at": "2026-10-19T09:15:54.663Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20261019T090546Z--438ee4"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "Robotis Lab: plan ready; implement Webots next",
+  "body": "Project brief: projects/robotis-lab/brief.md. Planning docs created for user as downloads; no Webots code or robot hardware execution yet. Next phase: audit actual inventory, then build testable 25-cm 10-DOF Webots model/controller. Cloud AI must not control servo safety loop. Avoid asserting <3m VND can deliver unsupported walking.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
