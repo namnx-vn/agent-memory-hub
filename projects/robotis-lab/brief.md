@@ -24,5 +24,12 @@ The assistant prepared a downloadable package `robotis-lab-blueprint-v1.zip` con
 3. Implement a genuine Webots RL-H25 .wbt + .proto + Python controller and testing instructions; mark code untested unless executed successfully.
 4. Use bench-tested torque/load/power data to refine BOM; don't assert current hardware prices without a current quote.
 
+## Sprint 01 implementation status (2026-10-19)
+Source bundle generated in ChatGPT artifact `robotis-lab-sprint01.zip` (22 files; not committed to this hub). Contains Webots .wbt world, RLH25.proto generated from config, 10 actuated leg DOF, 11 Physics nodes, initial standing targets, all specified simulated sensors, CSV+JSON logs, unit/fake-controller tests, and smoke/analysis scripts.
+
+Verification: Python compileall PASS, offline generated model/config structure PASS, 20 unittest cases PASS (normal, obstacle, non-finite IMU, simulated E-STOP and static log analysis). Genuine Webots runtime NOT available in authoring environment; world parser compatibility, contacts and 30-second standing are UNVERIFIED. Do not describe this as dynamically balanced or walking.
+
+Next action: unpack source on machine with Webots R2025a+; `python tools/generate_model.py`; `python tools/verify_project.py`; `python -m unittest discover -s tests -v`; `python tools/smoke_webots.py`. Capture exact Webots version, warnings, run CSV/JSON and 5 distinct P2 stand trials before moving to gait. Do not purchase hardware yet.
+
 ## Status
-Research architecture/planning complete; simulation implementation and hardware procurement not started.
+P1 source scaffold + offline tests complete; real Webots acceptance pending; hardware not started.
