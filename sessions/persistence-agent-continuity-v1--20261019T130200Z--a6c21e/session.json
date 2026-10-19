@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261019T130200Z--a6c21e",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-19T13:02:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261014T135100Z--be4c91",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261014T135100Z--be4c91"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Reviewed owner's 13-page uploaded Kyna Business English Beginner 1A LC4 (2.1) 'My favourite holiday destination (Part 1)' PDF. Produced comprehensive Vietnamese Markdown notes for A1-A2 / pre-class practice: /mnt/data/kyna_lc4_2_1_my_favourite_holiday_destination_complete_study_notes.md (27 sections, about 1397 lines). Includes page-based recap and checked answer keys for pages 2,4–10, descriptions of weather icons as worksheet examples rather than current conditions, 10 weather adjectives, key questions Who/What/How, 20 sentence frames, 30 potential teacher Q&A, 10 dialogues, 4 example stories, speeches of 30/45/60 seconds, shadowing, common error correction, exercises with answer key, flashcards and 30-minute plan. Explicitly labels material added beyond PDF.",
+  "last_seen_at": "2026-10-19T13:18:00Z"
+}
