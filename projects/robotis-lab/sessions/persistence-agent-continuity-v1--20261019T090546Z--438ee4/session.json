@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261019T090546Z--438ee4",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-19T09:05:46.371Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "project",
+  "project_id": "robotis-lab",
+  "summary": "Robotis Lab: drafting initial research instructions and detailed multi-phase plan for 25-cm biped humanoid simulation-first, Arduino Uno + host AI, initial budget ceiling about 3 million VND.",
+  "last_seen_at": "2026-10-19T09:05:46.371Z"
+}
