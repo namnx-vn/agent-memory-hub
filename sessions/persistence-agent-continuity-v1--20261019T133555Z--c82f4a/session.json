@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261019T133555Z--c82f4a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-19T13:35:55Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261019T130200Z--a6c21e",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261019T130200Z--a6c21e"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Reviewed the user's 8-page Kyna Duo Business English Foundation T04 PDF 'Who's that?'. Produced the Vietnamese A1–A2 pre-class Markdown guide /mnt/data/duo_foundation_t04_whos_that_complete_study_notes.md (~1,212 lines; 26 main study sections), grounded in pages 1–8 and clearly labeling additional examples. Coverage: this/that, who's this/that, age, pronouns, family vocabulary, numbers, 25 sentence templates, 30 teacher questions, 10 sample dialogues, 4 speaking stories, 20/45/60-second speech templates, role-play, pronunciation, 50 self-tests with keys, slide 3 answers B/A/B/C, listening page 5 not verifiable without audio, and a source inconsistency (family example states four members but names five), plus a 30-minute plan.",
+  "last_seen_at": "2026-10-19T13:35:55Z"
+}
