@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20261020T062126Z--persistence-agent-continuity-v1--rlh25-v02",
+  "created_at": "2026-10-20T06:21:26.539Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20261020T061159Z--b4c71e"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "RL-H25 v0.2 source ready; awaiting real Webots CSV",
+  "body": "See projects/robotis-lab/brief.md and latest session. Archive robotis-lab-v02-standing-balance.zip generated as chat artifact, 42 offline tests pass; no real physics test. Controller default baseline; PID balance opt-in with unverified signs. User next runs 5 independent Webots R2025a baseline 32s trials and shares CSV+JSON for comparison; do not claim stable active balance based on synthetic/mock tests.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
