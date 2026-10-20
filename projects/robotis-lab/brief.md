@@ -33,3 +33,9 @@ Next action: unpack source on machine with Webots R2025a+; `python tools/generat
 
 ## Status
 P1 source scaffold + offline tests complete; real Webots acceptance pending; hardware not started.
+
+## Real Webots run — 2026-10-20 (user macOS, Webots R2025a)
+- World and RLH25 PROTO load; Python controller starts and reports STAND. Rendering initially black but now resolved; robot is visible in front view.
+- Log at t=332.46s reports `state=FAULT reason=excessive_tilt root_height=0.184m roll=-0.000 pitch=0.522rad` (configured tilt fault 0.45rad). Later screenshot scene-tree root Y about 0.0764m (versus 0.183m initial), X≈0.393m Z≈0.578m, yaw-like rotation ≈2.61rad, suggesting subsequent collapse/drift; state latch remains FAULT even if pose later changes.
+- Source confirmed: `StandController` is open-loop neutral position hold; no feedback balance. FAULT latches; diagnostic FIRST FAULT CSV samples required before attributing cause. Do not change world coordinate system (`NUE`, Y-up) solely on perspective.
+- Next: reset simulation, run independent 30–60s trials, inspect `experiments/logs/` CSV around first fault and report minima/maxima/drift; then instrument X/Z/yaw if necessary, tune physics and implement bounded balancing based on measurements.
