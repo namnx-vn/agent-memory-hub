@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261021T071100Z--afk261",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-21T07:11:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Owner requested latest AFK Arena gift codes as of 2026-10-21; verifying web sources and redemption site.",
+  "last_seen_at": "2026-10-21T07:11:00Z"
+}
