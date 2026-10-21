@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261021T053300Z--d8b4e1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-21T05:33:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Owner asked for an indicative Vietnamese retail selling price for a photographed bear/flower/gift keychain with black braided strap and gold-tone findings. Comparable Vietnamese listings suggest a typical retail estimate of VND 25,000–40,000; recommended simple listing price VND 29,000. No further action or handoff.",
+  "last_seen_at": "2026-10-21T05:35:00Z"
+}
