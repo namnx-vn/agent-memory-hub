@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261021T140538Z--d60200",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-21T14:05:38.278Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261020T061159Z--b4c71e",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261020T061159Z--b4c71e"
+  ],
+  "scope": "project",
+  "project_id": "robotis-lab",
+  "summary": "Start Sprint 02.1 controlled Webots disturbance experiment. Prior baseline gate passed 5/5, but manual balance run FAULT excessive_tilt. Implement reproducible force injection, paired baseline/balance trials, safety and objective comparison without advancing gait prematurely.",
+  "last_seen_at": "2026-10-21T14:05:38.278Z"
+}
