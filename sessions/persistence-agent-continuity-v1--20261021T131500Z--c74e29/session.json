@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261021T131500Z--c74e29",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-21T13:15:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261021T131500Z--d9e4b2",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261021T131500Z--d9e4b2"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Prepared detailed Vietnamese A1-A2 pre-class Markdown notes for the owner's four-page Kyna Speaking Practice 'Education' PDF. Verified output at /mnt/data/kyna_speaking_practice_education_complete_study_notes.md (1,610 lines, 82 KB): source slide map and all 10 exact themed open discussion prompts; 3-level sample answers and follow-ups for each; notes not to invent university/major/credentials; one-word/one-image warmup; vocabulary, past/present grammar, 30 sentence frames, 20 extra teacher prompts, 10 dialogues, group role-play, 30/45/60/90-second speeches, 4 example stories, frontend interview relevance, pronunciation, 15 common errors, 44 objective exercises with answer keys, speaking tasks, worksheet and 30-minute/7-day plans. Clearly identified source-based versus assistant-added materials. This was a Markdown deliverable, not a PDF edit.",
+  "last_seen_at": "2026-10-21T13:15:00Z"
+}
