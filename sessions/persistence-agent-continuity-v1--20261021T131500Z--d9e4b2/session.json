@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261021T131500Z--d9e4b2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-21T13:15:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261019T133555Z--c82f4a",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261019T133555Z--c82f4a"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Preparing expanded Vietnamese A1–A2 Markdown lesson notes from the owner's 14-page Kyna Business English Beginner 1A 'I am going to go on holiday by train' PDF, preserving slide framing and distinguishing additional practice and ambiguous T/F items.",
+  "last_seen_at": "2026-10-21T13:15:00Z"
+}
