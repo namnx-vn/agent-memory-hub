@@ -3,7 +3,7 @@
   "session_id": "persistence-agent-continuity-v1--20261021T131500Z--d9e4b2",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-10-21T13:15:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20261019T133555Z--c82f4a",
   "continued_from": [
@@ -11,6 +11,6 @@
   ],
   "scope": "standalone",
   "project_id": null,
-  "summary": "Preparing expanded Vietnamese A1–A2 Markdown lesson notes from the owner's 14-page Kyna Business English Beginner 1A 'I am going to go on holiday by train' PDF, preserving slide framing and distinguishing additional practice and ambiguous T/F items.",
-  "last_seen_at": "2026-10-21T13:15:00Z"
+  "summary": "Completed a 1,498-line / 66.6 KB Vietnamese pre-class Markdown study guide for the owner's 14-page Kyna English Beginner 1A 'I am going to go on holiday by train – Part 1' PDF. Artifact: /mnt/data/kyna_beginner_1a_transport_by_train_complete_study_notes.md. Grounded slide 3–4 transport/places, page 6 word-bank answers (1 going, 2 How, 3 by, 4 gonna, 5 not, derived from visible text without audio), page 7–9 grammar, page 10 multiple-choice B/A/B/B/A, page 11 picture-based sample sentences. Explicitly flagged slide 5 sentences 3 and 5 as not factually verifiable from the PDF (may be T for vocabulary-match exercise). Included 30 numbered chapters, 30 interchangeable sentence frames, 30 teacher Q&A, 10 dialogues, 4 role plays, 5 sample monologues, pronunciation, 62 self-test questions with keys, 30-min prep and 7-day practice. Distinguished PDF content from model-added examples.",
+  "last_seen_at": "2026-10-21T13:30:00Z"
 }
