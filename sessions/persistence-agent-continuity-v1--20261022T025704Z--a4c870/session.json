@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261022T025704Z--a4c870",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "handoff",
+  "started_at": "2026-10-22T02:57:04.624Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Provided a reusable Vietnamese prompt and cheerful beginner-friendly A4 coloring-sheet topic list; large simple outlined subjects, whitespace, print-ready black-and-white, no sensitive personal details persisted.",
+  "last_seen_at": "2026-10-22T02:57:04.624Z",
+  "scope": "standalone",
+  "project_id": null
+}
