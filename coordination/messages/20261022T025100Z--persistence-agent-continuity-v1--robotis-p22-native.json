@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20261022T025100Z--persistence-agent-continuity-v1--robotis-p22-native",
+  "created_at": "2026-10-22T02:51:00Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20261022T022400Z--e4a19c"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "RL-H25 P2.2 native force API verified; RL-H25 recovery still underexcited",
+  "body": "Read robotis-lab master PR#8 (merged SHA 5764732...) and draft docs PR#9. Webots native force API probe 8/8 PASS in Actions run 39713137894, actual R2025a; offline 99 tests PASS, native smoke PASS. Actual RL-H25 pitch+ 0.10N 0.112s 7 steps baseline peak .00012rad vs PID .00016rad, both INCONCLUSIVE relative to .008rad. P2.2 NOT_ACCEPTED, P3 blocked; inspect docs/experiments/p2-2-acceptance-report.md (PR#9) and docs/OPERATOR_HANDOFF.md. Operator must verify foot contact. Next approved work: cautiously diagnose inadequate excitation; consider 0.15N bounded pitch+ pilot only after safety review, 0.20N only if preceding safe; no PID tuning until measurable response, no unsafe hardware or automatic gait. Do not merge draft PR#9 without review.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
