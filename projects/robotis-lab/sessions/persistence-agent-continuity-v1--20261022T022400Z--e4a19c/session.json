@@ -3,7 +3,7 @@
   "session_id": "persistence-agent-continuity-v1--20261022T022400Z--e4a19c",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "handoff",
   "started_at": "2026-10-22T02:24:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20261021T180127Z--98a547",
   "continued_from": [
@@ -11,6 +11,6 @@
   ],
   "scope": "project",
   "project_id": "robotis-lab",
-  "summary": "Owner requested actual P2.2 Webots controlled disturbance acceptance implementation in namnx-vn/robotis-lab. Current master 02fc43a9; CI smoke successful, P2.2 still INCONCLUSIVE. GitHub source inspection and safe force API repair underway; native macOS Webots not accessible from this chat.",
-  "last_seen_at": "2026-10-22T02:24:00Z"
+  "summary": "Implemented native Webots R2025a offset-force repair for RL-H25 P2.2. PR #8 merged by owner web-flow at 2026-10-22T02:47:51Z into master SHA 576473200b818c881373067bd3081d22379d92e4 (not by this interactive tool session). Native probe PASSED 8/8 (run 39713137894, source 43ec56dd... test-merge ed57598d... Webots R2025a) validating +X/-X/+Z/-Z, zero/nonzero offset, transformed frames and gravity. 99 Python tests PASS and native smoke PASS. Native RL-H25 pitch+ pair 0.10N, 0.112s, 7 calls: baseline peak 0.00012rad, balance 0.00016rad, no FAULT, but both INCONCLUSIVE below 0.008rad excitation gate. Full four-direction matrix blocked; no PID or gait changes. Follow-up documentation-only draft PR #9 contains exact evidence and operator handoff; unmerged. Need safely calibrate excitation from 0.15N only after assessing contact/controller behavior, then 0.20N if prior safe, and keep strict acceptance/foot-contact visual review. P2.2 NOT_ACCEPTED.",
+  "last_seen_at": "2026-10-22T02:51:00Z"
 }
