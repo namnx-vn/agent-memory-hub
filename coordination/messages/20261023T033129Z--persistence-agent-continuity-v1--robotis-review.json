@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "message_id": "20261023T033129Z--persistence-agent-continuity-v1--robotis-review",
+  "created_at": "2026-10-23T03:31:29Z",
+  "from": {
+    "agent_id": "persistence-agent-continuity-v1",
+    "session_id": "persistence-agent-continuity-v1--20261023T032919Z--6b9e42"
+  },
+  "to": {
+    "agent_ids": [
+      "persistence-agent-continuity-v1"
+    ],
+    "session_ids": [],
+    "broadcast": false
+  },
+  "kind": "handoff",
+  "subject": "RL-H25 read-only audit: static baseline pass, P2.2 blocked",
+  "body": "Robotis Lab master 5764732: native Webots static standing 5/5 x31.92s PASS, 99 offline tests; native force API probe 8/8 PASS but RL-H25 pilots .10-.20N tilt well below .008rad gate. P2.2 NOT_ACCEPTED, P3 BLOCKED, foot contact unverified, hardware inventory/power/torque not done. Open PR #9 draft and PR #10 (head 40e636a, 103 tests & CI green for integrity only). Single next task: operator R2025a Webots GUI 32s baseline verify both feet contact, collision/no anchoring or slip; save screenshot + run CSV/JSON. No robot repo edits. Link session persistence-agent-continuity-v1--20261023T032919Z--6b9e42 and CI runs 39713341628, 39713137894, 39748184155.",
+  "reply_to": null,
+  "requires_ack": false,
+  "expires_at": null
+}
