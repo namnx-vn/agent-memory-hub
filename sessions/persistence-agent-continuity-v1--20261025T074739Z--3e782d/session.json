@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261025T074739Z--3e782d",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "handoff",
+  "scope": "standalone",
+  "project_id": null,
+  "started_at": "2026-10-25T07:47:39.526Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Reviewed a Vietnamese viral infographic claiming 10 visible behaviors reveal personality or motives. Scientific evaluation: claims mostly ungrounded/overgeneralized; eye-contact avoidance not an indicator of dishonesty, interruptions have multiple explanations, unintentional weight loss merits medical consideration. Sources: deception meta-analyses, NIMH, CDC, NHS. No ongoing follow-up required.",
+  "last_seen_at": "2026-10-25T07:47:39.526Z"
+}
