@@ -9,6 +9,6 @@
   "continued_from": [],
   "scope": "standalone",
   "project_id": null,
-  "summary": "Assessed inventory: Uno R3 can be reused for basic Android Bluetooth RC car; ULN2003/relay unsuitable as reversing brushed DC motor driver. Recommend 2WD TT geared motors + 2 wheels/caster/chassis, TB6612FNG dual H-bridge (verify motor stall current), HC-05 Bluetooth classic UART, 4xAA NiMH motor supply and separate USB power bank for Uno, common GND, wiring/resistor divider for 3.3V HC-05 RX, fail-safe stop on communication loss. Inventory photo-only untested; verify existing accessories before buying. Wi-Fi ESP32 is optional alternate architecture.",
+  "summary": "Owner refined RC car requirement: Android control over Wi-Fi or 5G mobile Internet, not Bluetooth. Recommended ESP32 as primary controller; for Wi-Fi coverage car uses 2.4GHz Wi-Fi and phone may access via 5G through authenticated MQTT/WebSocket cloud; for operation outside Wi-Fi, add 4G LTE SIM7600 cellular development board, SIM/data, antenna, suitable power, while phone can remain on 5G. 4G is sufficient for driving commands; true 5G car modem not needed. Common drivetrain: TB6612FNG subject to stall current, 2 TT motors, 2WD chassis, battery power, wire/switch. Mandatory watchdog stops vehicle on command timeout and use secure channel. Pending question: Wi-Fi zone only or vehicle mobile outside Wi-Fi?",
   "last_seen_at": "2026-10-25T13:53:00Z"
 }
