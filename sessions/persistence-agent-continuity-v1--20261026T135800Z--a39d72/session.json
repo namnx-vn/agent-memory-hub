@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261026T135800Z--a39d72",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-26T13:58:00Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261023T134700Z--f42c8b",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261023T134700Z--f42c8b"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Preparing concise bilingual Markdown pre-class guides for two user-uploaded Kyna English PDFs: Speaking Practice 'What I eat in a day' (5 pages, 20 open speaking prompts) and Beginner 1A Business English 'Would you like some soup? Part 1' (14 pages, food vocabulary, offers, countability, some/any). Will cover original exercises and supplemental speaking patterns, noting source gaps.",
+  "last_seen_at": "2026-10-26T13:58:00Z"
+}
