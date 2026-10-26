@@ -3,7 +3,7 @@
   "session_id": "persistence-agent-continuity-v1--20261026T135800Z--a39d72",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-10-26T13:58:00Z",
   "parent_session_id": "persistence-agent-continuity-v1--20261023T134700Z--f42c8b",
   "continued_from": [
@@ -11,6 +11,6 @@
   ],
   "scope": "standalone",
   "project_id": null,
-  "summary": "Preparing concise bilingual Markdown pre-class guides for two user-uploaded Kyna English PDFs: Speaking Practice 'What I eat in a day' (5 pages, 20 open speaking prompts) and Beginner 1A Business English 'Would you like some soup? Part 1' (14 pages, food vocabulary, offers, countability, some/any). Will cover original exercises and supplemental speaking patterns, noting source gaps.",
-  "last_seen_at": "2026-10-26T13:58:00Z"
+  "summary": "Reviewed two owner-uploaded Kyna English PDF lessons: 'What I eat in a day' Speaking Practice (5 pages, 20 discussion prompts and My N.A.M.E warmup) and 'Would you like some soup? Part 1' Beginner 1A (14 pages). Produced verified UTF-8 Vietnamese-A1/A2 markdown files /mnt/data/kyna_what_i_eat_in_a_day_study_notes.md (244 lines; all 20 original questions with sample answers, sentence frames, four dialogs, speech, practice) and /mnt/data/kyna_would_you_like_some_soup_part1_study_notes.md (238 lines; page mappings, illustrated exercise solutions pages 3-5 and 8-9, offers, countability, a/an/some/any, spoken examples). Explicitly flagged ambiguity of 'tea' versus 'coffee' for page 4 blank 3 and corrected slide 10's misleading classification of 'olive' as uncountable (olive is countable; olive oil is uncountable). Both contain 20-minute preparation plans and user-customizable examples; not committed to english-kyna repo.",
+  "last_seen_at": "2026-10-26T14:08:00Z"
 }
