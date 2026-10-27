@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261027T064000Z--a9d4c2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-10-27T06:40:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "User asks for a concise Vietnamese introduction to historical emperor Trần Nhân Tông (1258–1308). No active workspace task; no predecessor specifically relevant.",
+  "last_seen_at": "2026-10-27T06:40:00Z"
+}
