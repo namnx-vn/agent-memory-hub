@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261030T074400Z--c7e2a9",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-30T07:44:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Advised short English greeting copy and small typography placement for a Tet 2027 goat postcard.",
+  "last_seen_at": "2026-10-30T07:44:00Z"
+}
