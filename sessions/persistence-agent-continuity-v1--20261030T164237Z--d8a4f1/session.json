@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261030T164237Z--d8a4f1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "scope": "standalone",
+  "project_id": null,
+  "status": "handoff",
+  "started_at": "2026-10-30T16:42:37.246Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Phone cleanup assistance requested. Runtime has no direct phone filesystem or settings control. Next step is user-provided device type and storage screen for guided cleanup. No phone files deleted or settings changed.",
+  "last_seen_at": "2026-10-30T16:42:37.246Z"
+}
