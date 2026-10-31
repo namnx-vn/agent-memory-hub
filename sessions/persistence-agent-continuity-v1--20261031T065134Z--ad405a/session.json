@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261031T065134Z--ad405a",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-10-31T06:51:34.063Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "User requested survival-oriented mobile phone shortlist. Compared verified official specifications: Oukitel WP35/WP35 Pro (11,000mAh, 360g), Samsung Galaxy XCover7 Pro (replaceable battery, IP68), Ulefone Armor 34 Pro+ (25,500mAh, lantern), Oukitel WP100 Titan (33,000mAh, 876.6g). Important region caveat: iPhone Emergency SOS via satellite is not supported in Vietnam per Apple; Garmin flags Vietnam as possibly regulated/restricted for inReach. User budget and use scenario not yet provided.",
+  "last_seen_at": "2026-10-31T06:51:34.063Z"
+}
