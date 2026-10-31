@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261031T012326Z--a6d29c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "scope": "standalone",
+  "project_id": null,
+  "status": "closed",
+  "started_at": "2026-10-31T01:23:26.304Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "summary": "Researched official seedling and flower facilities near Vietnam National University of Agriculture. No authoritative largest ranking found; identified CEFORD and the university experimental training centre as relevant leads. No follow-up task queued.",
+  "last_seen_at": "2026-10-31T01:23:26.304Z"
+}
