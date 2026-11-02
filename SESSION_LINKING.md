@@ -1,5 +1,15 @@
 # Cross-Chat Session Linking
 
+## Mandatory privacy boundary for ChatGPT Projects
+
+**Public GitHub repositories are not an approved destination for ChatGPT Project conversation data.** Before any write, check the destination repository's actual visibility. For any chat running inside a ChatGPT Project, do not publish prompts, responses, transcripts, excerpts, filenames revealing chat content, session records or IDs, conversation metadata, summaries, decisions derived from the chat, handoffs, message-bus records, logs, or user/project context to a **public** Git repository, regardless of directory or whether the record is labeled `standalone`.
+
+This ban includes `sessions/`, `projects/`, `shared/`, `memory/`, `state/`, `logs/`, `coordination/`, Git commit messages, issues, and pull requests. Do not bypass it by falling back from project-scoped storage to standalone storage, redacting only the transcript, or using a different public repository.
+
+Create/update project chat sessions or handoffs only in an owner-approved **private** store with appropriate permissions. If none is configured, use the public repository **read-only** for general, non-sensitive policy/bootstrap information and continue the user's task without Git persistence, session creation, message-bus writes, or public handoff. This privacy rule overrides general continuity, bootstrap, and mandatory audit/write instructions. Publishing a generic, conversation-free security policy is permitted.
+
+These rules prevent new public writes; they do not erase past Git history, copies, forks, caches, or previously published material. Review historical exposure separately when needed.
+
 This repository is the durable rendezvous layer for otherwise separate chat/model invocations.
 
 ## Goal
@@ -68,7 +78,7 @@ Standalone sessions MAY include:
 
 ### Fallback
 
-If project membership or a stable project id cannot be established reliably, use the standalone path. Never invent a project id from guessed context.
+If a conversation is known to belong to a ChatGPT Project but lacks a stable project id, **do not publish it to standalone storage**. In a public repository, skip all project-chat persistence regardless of whether an id is available. Only genuinely standalone, non-project chats may use the standalone path, subject to confidentiality and owner authorization. Never invent a project id from guessed context.
 
 ## Session schema
 
@@ -104,7 +114,7 @@ Do not store full private chat transcripts by default. Store only concise durabl
 5. Create a new `session_id` unless explicitly continuing a known session.
 6. Read `state/current.json`, `NEXT_SESSION.md`, and relevant recent session summaries. For project chats, prefer recent sessions from the same project tree first.
 7. Read messages addressed to the current `agent_id`, current `session_id`, or `broadcast`.
-8. Create the session node at the routed path.
+8. First enforce the mandatory privacy boundary above. Create the session node at the routed path **only if** its destination is approved and private for project chats. Otherwise omit session creation and public handoff.
 9. Perform only owner-authorized work.
 
 ## Linking sessions
