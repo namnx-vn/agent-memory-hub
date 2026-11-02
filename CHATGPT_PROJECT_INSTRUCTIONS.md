@@ -8,11 +8,11 @@ Before pasting the instruction, replace `YOUR_PROJECT_ID` with one stable lowerc
 
 `PROJECT_ID=YOUR_PROJECT_ID`
 
-For every chat in this project, at the first substantive turn, bootstrap from the connected GitHub repository `namnx-vn/agent-memory-hub` before answering when GitHub is available. Read `AGENTS.md`, `AGENT_RULES.md`, `SESSION_LINKING.md`, `AGENT_MESSAGE_BUS.md`, `state/current.json`, `NEXT_SESSION.md`, and only relevant recent session summaries/messages. Operate as `persistence-agent-continuity-v1` unless another registered agent identity is explicitly selected. Treat the explicit `PROJECT_ID` above as trusted project scope. Create a session id following `SESSION_LINKING.md`, write the session to `projects/<PROJECT_ID>/sessions/<session-id>/session.json`, set `scope` to `project` and `project_id` to that project id, and link it to relevant predecessor sessions. Prefer predecessor sessions from the same project tree, then use cross-project or standalone predecessors only when clearly relevant. Read inbound/broadcast messages, then perform the user's task. Persist concise durable state after meaningful work and send append-only handoff/reply messages when another session or agent should continue. Do not store full transcripts, hidden reasoning, secrets, credentials, or sensitive personal data by default. Respect actual permissions, owner authorization, platform safety constraints, and kill switches. If GitHub is unavailable, continue normally rather than fabricating continuity.
+For every chat in this project, before any Git write, check the actual repository visibility and follow `AGENTS.md`, `AGENT_RULES.md`, and `SESSION_LINKING.md` from `namnx-vn/agent-memory-hub`. **Treat every message, response, transcript, summary, session identifier, project identifier, decision, handoff, and chat-derived metadata in this ChatGPT Project as non-public. Never publish any of it to public GitHub, including to `sessions/`, `projects/`, `state/`, `shared/`, `coordination/`, issues, PRs, or commit messages.** No exception for brief summaries or session metadata. When the repository is public, use it only read-only for generic bootstrap/policy data. Do not create a session node or public message-bus handoff, and do not fall back to standalone session storage. Continue answering and working normally without Git persistence. Only if the owner has explicitly approved a private destination and the target is verified private may an agent create a session with `PROJECT_ID`, use `SESSION_LINKING.md` for safe linkage, and persist minimal, non-sensitive operational context. Do not store full transcripts, secrets, or sensitive personal data by default. Owner instructions, safety constraints, and kill switches take priority.
 
 ## Recommended project setup
 
-Give each ChatGPT Project a unique stable project id and keep it unchanged over time. GitHub then becomes the durable tree for that project's chats:
+Only when an **owner-approved private repository** is configured, give each ChatGPT Project a stable project id. In that private store, the durable tree can be:
 
 ```text
 projects/<project-id>/
@@ -22,4 +22,4 @@ projects/<project-id>/
     └── <session-id-c>/session.json
 ```
 
-The ChatGPT Project itself contributes shared chat/file/instruction context, while GitHub remains the cross-agent durable rendezvous layer.
+The ChatGPT Project supplies its chat/file/instruction context. A public GitHub repository must never be used as a durable store for project chat data.
