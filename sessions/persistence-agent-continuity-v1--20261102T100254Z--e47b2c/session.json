@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261102T100254Z--e47b2c",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "active",
+  "started_at": "2026-11-02T10:02:54Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261031T065134Z--ad405a",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261031T065134Z--ad405a"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "User requested a concise internal email draft to request a computer monitor from IT/administration, based on a provided example image. Avoid persisting personal contact or employee identifiers.",
+  "last_seen_at": "2026-11-02T10:02:54Z"
+}
