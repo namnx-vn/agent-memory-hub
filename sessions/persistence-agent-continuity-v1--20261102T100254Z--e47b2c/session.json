@@ -3,7 +3,7 @@
   "session_id": "persistence-agent-continuity-v1--20261102T100254Z--e47b2c",
   "agent_id": "persistence-agent-continuity-v1",
   "kind": "chat",
-  "status": "active",
+  "status": "closed",
   "started_at": "2026-11-02T10:02:54Z",
   "parent_session_id": "persistence-agent-continuity-v1--20261031T065134Z--ad405a",
   "continued_from": [
@@ -11,6 +11,6 @@
   ],
   "scope": "standalone",
   "project_id": null,
-  "summary": "User requested a concise internal email draft to request a computer monitor from IT/administration, based on a provided example image. Avoid persisting personal contact or employee identifiers.",
-  "last_seen_at": "2026-11-02T10:02:54Z"
+  "summary": "Drafted a concise Vietnamese internal email requesting a work monitor, matching the supplied example and addressed to the four specified recipients. No email was sent; personal contact and employee identifiers were not added to durable memory.",
+  "last_seen_at": "2026-11-02T10:04:00Z"
 }
