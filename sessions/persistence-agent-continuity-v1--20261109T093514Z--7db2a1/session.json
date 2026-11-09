@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261109T093514Z--7db2a1",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-11-09T09:35:14Z",
+  "parent_session_id": "persistence-agent-continuity-v1--20261028T125200Z--b6f921",
+  "continued_from": [
+    "persistence-agent-continuity-v1--20261028T125200Z--b6f921"
+  ],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Reviewed two Kyna English PDF lessons supplied by owner: 9-page Speaking Practice 'What kind of house do you live in?' and 11-page Beginner 1A Business English 'I would like to make an appointment with Dr. Harris'. Created and verified two standalone Vietnamese A1–A2 pre-class Markdown notes at /mnt/data/kyna_what_kind_of_house_do_you_live_in_preclass.md (241 lines; source vocabulary, grammar, original three room prompts, 18 practice questions × two consistent fictional answer narratives, two dialogues, monologues, answer keys and 20-min plan) and /mnt/data/kyna_make_appointment_dr_harris_preclass.md (253 lines; seven symptom words and visual exercise answers, request/symptom grammar, 6 picture captions × two versions, 14 telephone practice questions × two consistent fictional answers, two complete sample dialogues, role-play, 20-min plan). Clearly distinguished source vs added practice, preserved unknown audio answers for pages 6 and 8, flagged diarrhea as noun despite slide label. No sensitive user data persisted.",
+  "last_seen_at": "2026-11-09T09:40:00Z"
+}
