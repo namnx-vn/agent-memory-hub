@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "session_id": "persistence-agent-continuity-v1--20261114T161800Z--b6e4c2",
+  "agent_id": "persistence-agent-continuity-v1",
+  "kind": "chat",
+  "status": "closed",
+  "started_at": "2026-11-14T16:18:00Z",
+  "parent_session_id": null,
+  "continued_from": [],
+  "scope": "standalone",
+  "project_id": null,
+  "summary": "Answered a general science question distinguishing EEG brainwave frequency bands from quantum physics. No ongoing task or follow-up required.",
+  "last_seen_at": "2026-11-14T16:18:00Z"
+}
